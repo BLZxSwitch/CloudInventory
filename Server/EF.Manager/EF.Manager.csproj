@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20180704001205_ChangeExpenseReceipt.cs" />
+    <Compile Remove="Migrations\20180704001244_ChangeExpenseReceipt.cs" />
+    <Compile Remove="Migrations\20180704002246_ChangeExpenseReceipt1.cs" />
+    <Compile Remove="Migrations\20180704002552_ChangeExpenseReceipt1.cs" />
+    <Compile Remove="Migrations\20180704002701_ChangeExpenseReceipt1.cs" />
+    <Compile Remove="Migrations\20180712194329_HolidayAddTenantAndIndex.cs" />
+    <Compile Remove="Migrations\20180712194833_HolidayAddTenantAndIndex.cs" />
+    <Compile Remove="Migrations\20180712195104_HolidayAddIndex.cs" />
+    <Compile Remove="Migrations\20180716173932_AddSqlAppUser.cs" />
+    <Compile Remove="Migrations\20180718193508_AddEmployeePayslip.cs" />
+    <Compile Remove="Migrations\20180719000227_AddEmployeePayslip.cs" />
+    <Compile Remove="Migrations\20180719000654_AddEmployeePayslip.cs" />
+    <Compile Remove="Migrations\20180719001056_AddEmployeePayslip.cs" />
+    <Compile Remove="Migrations\20180719150507_ChangeEmployeePayslip.cs" />
+    <Compile Remove="Migrations\20180725225829_AddUniqueIndexToPayslips.cs" />
+    <Compile Remove="Migrations\20180820210321_AddVatAndVatValueTables.cs" />
+    <Compile Remove="Migrations\20180820232513_AddVatAndVatValueTables.cs" />
+    <Compile Remove="Migrations\20180820235247_AddVatAndVatValueTables.cs" />
+    <Compile Remove="Migrations\20180821120021_AddVatAndVatValueTables1.cs" />
+    <Compile Remove="Migrations\20180821120301_AddVatAndVatValueTables.cs" />
+    <Compile Remove="Migrations\20180821120412_AddVatAndVatValueTables.cs" />
+    <Compile Remove="Migrations\20180821120538_AddVatAndVatValueTables.cs" />
+    <Compile Remove="Migrations\20180822190212_AddVatIdToExpenseType.cs" />
+    <Compile Remove="Migrations\20180906125602_ChangeDeleteBehaviorForSecurityUserId.cs" />
+    <Compile Remove="Migrations\20180906125814_ChangeDeleteBehaviorForSecurityUserId.cs" />
+    <Compile Remove="Migrations\20180906130101_ChangeDeleteBehavior.cs" />
+    <Compile Remove="Migrations\20180909092940_AddOrganizationalUnit.cs" />
+    <Compile Remove="Migrations\20180909095618_AddOrganizationalUnit.cs" />
+    <Compile Remove="Migrations\20180909095701_AddOrganizationalUnit.cs" />
+    <Compile Remove="Migrations\20180909100102_AddOrganizationalUnit.cs" />
+    <Compile Remove="Migrations\20180909101414_AddOrganizationalUnit.cs" />
+    <Compile Remove="Migrations\20180911132507_OrganizationalUnitChangeParentId.cs" />
+    <Compile Remove="Migrations\20180914125205_ChangeOrganizationalUnitId.cs" />
+    <Compile Remove="Migrations\20180914130413_ChangeOrganizationalUnitId.cs" />
+    <Compile Remove="Migrations\20181002100709_AddPropertyEnableTwoFactorAuthentication.cs" />
+    <Compile Remove="Migrations\20181003202238_AddNotificationOptionsToSecurityUser.cs" />
+    <Compile Remove="Migrations\20181011094522_AddCompanyFields.cs" />
+    <Compile Remove="Migrations\20181011110155_AddCompanyFields.cs" />
+    <Compile Remove="Migrations\20181016213537_AddUserPicture.cs" />
+    <Compile Remove="Migrations\20181016213706_AddUserPicture.cs" />
+    <Compile Remove="Migrations\20181016214020_AddUserPicture.cs" />
+    <Compile Remove="Migrations\20181114222210_AddIsBookedToExpense.cs" />
+    <Compile Remove="Migrations\20181118014714_test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
+    <PackageReference Include="Autofac.Extras.RegistrationAttributes" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EF.Models\EF.Models.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+</Project>
