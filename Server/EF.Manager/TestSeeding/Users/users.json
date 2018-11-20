@@ -28,78 +28,34 @@
         "Phone": "+7 928 888 88 88"
       }
     }
+  },
+  {
+    "Id": "{400801e7-3bc6-4053-848c-987cb5774930}",
+    "UserName": "Фатима",
+    "Roles": [
+      {
+        "RoleId": "{d1313132-e715-4834-be31-9d85bf3aec11}"
+      }
+    ],
+    "Email": "fatima@m.m",
+    "NormalizedEmail": "fatima@m.m",
+    "PasswordHash": "fatima@m123",
+    "SecurityStamp": "552QSFVWHTXBR2V3YWBWJAPEC7W55UZ7",
+    "SecurityUser": {
+      "TenantId": "{21acd8e0-5343-492f-b9f3-43a35a89f654}",
+      "IsActive": true,
+      "CultureName": "ru",
+      "Employee": {
+        "Id": "{B07B5545-E1E1-4EB0-96C0-390D198FA077}",
+        "Gender": 1,
+        "TenantId": "{21acd8e0-5343-492f-b9f3-43a35a89f654}",
+        "CompanyId": "{5d73e9b6-5703-4a48-a1e5-ff66904f2215}",
+        "FirstName": "Гульчатаева",
+        "LastName": "Фатима",
+        "PatronymicName": "Паповна",
+        "DateOfBirth": "1983-01-01T00:00:00.000Z",
+        "Phone": "+7 928 888 88 88"
+      }
+    }
   }
-  //{
-  //  "Id": "{1083F711-692E-46B7-A3CE-29A0AD49C31F}",
-  //  "UserName": "Jane",
-  //  "Roles": [
-  //    {
-  //      "RoleId": "{D441584D-0A37-4870-9F8D-E18B91FF59FF}"
-  //    }
-  //  ],
-  //  "Email": "jane@m.m",
-  //  "NormalizedEmail": "jane@m.m",
-  //  "PasswordHash": "jane@m123",
-  //  "SecurityStamp": "NBVGLIIUPTSMLH3G24PDR7NNNFNP56ZZ",
-  //  "SecurityUser": {
-  //    "TenantId": "{E80FDE12-B34D-425F-ADE6-B263D28495BF}",
-  //    "IsActive": true,
-  //    "CultureName": "en",
-  //    "Employee": {
-  //      "Id": "{B07B5545-E1E1-4EB0-96C0-390D198FA077}",
-  //      "Gender": 1,
-  //      "Number": "222",
-  //      "TenantId": "{E80FDE12-B34D-425F-ADE6-B263D28495BF}",
-  //      "CompanyId": "{7745DB92-7E04-4678-9DFF-D5A77C78D40F}",
-  //      "AHVNr": "756.9217.0769.85",
-  //      "FirstName": "Jane",
-  //      "LastName": "Doe",
-  //      "DateOfBirth": "1983-01-01T00:00:00.000Z",
-  //      "AddressLine1": "Badenerstrasse 123, Zürich, Switzerland",
-  //      "AddressLine2": "Switzerland",
-  //      "Zip": "8057",
-  //      "City": "Zürich",
-  //      "Phone": "+41 11 222 33 44",
-  //      "Nationality": "Swiss",
-  //      "HomeTown": "Basel",
-  //      "Notes": "notes"
-  //    }
-  //  }
-  //},
-  //{
-  //  "Id": "{CE8D34D5-CF54-4B4F-A6BF-1FCC985AB081}",
-  //  "UserName": "Test",
-  //  "Roles": [
-  //    {
-  //      "RoleId": "{044B902B-FF2F-4A6F-BB92-50440CF96656}"
-  //    }
-  //  ],
-  //  "Email": "test@test.test",
-  //  "NormalizedEmail": "test@test.test",
-  //  "PasswordHash": "test",
-  //  "SecurityStamp": "MAFYLIIUPTSMLH2524PDR4DNNFNP56UT",
-  //  "SecurityUser": {
-  //    "TenantId": "{E80FDE12-B34D-425F-ADE6-B263D28495BF}",
-  //    "IsActive": true,
-  //    "CultureName": "en",
-  //    "Employee": {
-  //      "Gender": 0,
-  //      "Number": "111",
-  //      "TenantId": "{E80FDE12-B34D-425F-ADE6-B263D28495BF}",
-  //      "CompanyId": "{7745DB92-7E04-4678-9DFF-D5A77C78D40F}",
-  //      "AHVNr": "756.9217.0769.85",
-  //      "FirstName": "John",
-  //      "LastName": "Doe",
-  //      "DateOfBirth": "1980-01-01T00:00:00.000Z",
-  //      "AddressLine1": "Badenerstrasse 123, Zürich, Switzerland",
-  //      "AddressLine2": "Switzerland",
-  //      "Zip": "4044",
-  //      "City": "Zürich",
-  //      "Phone": "+41 00 999 88 77",
-  //      "Nationality": "Swiss",
-  //      "HomeTown": "Basel",
-  //      "Notes": "notes"
-  //    }
-  //  }
-  //}
 ]

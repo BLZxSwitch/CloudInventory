@@ -12,6 +12,7 @@ namespace EF.Models.Models
         public string Zip { get; set; }
         public string City { get; set; }
         public string Phone { get; set; }
+        public string INN { get; set; }
 
         public virtual Tenant Tenant { get; set; }
         public virtual List<Employee> Employees { get; set; }

@@ -1,4 +1,5 @@
 using System;
+using System.Reflection.Metadata;
 
 namespace EF.Models.Models
 {
@@ -14,6 +15,7 @@ namespace EF.Models.Models
         public bool IsInvitationAccepted { get; set; }
         public string TwoFactorAuthenticationSecretKey { get; set; }
         public DateTime? ToSAcceptedDate { get; set; }
+        //public Blob UserPicture { get; set; }
 
         public virtual User User { get; set; }
         public virtual Tenant Tenant { get; set; }
