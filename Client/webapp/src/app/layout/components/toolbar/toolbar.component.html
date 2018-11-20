@@ -1,0 +1,16 @@
+<div class="backdrop-container" [class.box-shadow]="scrolled$|async">
+  <pr-backdrop [transition]="false" [blur]="scrolled$|async"></pr-backdrop>
+</div>
+<mat-toolbar>
+  <div class="hamburger-container">
+    <button mat-icon-button
+            *ngIf="showHamburger"
+            (click)="onHamburgerClick()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <img src="/assets/img/logo.gif"
+       [class.shift]="!mobile&&sidenavIsVisible"
+       [class.transition]="transition"/>
+  <div class="version">{{environment.version}}</div>
+</mat-toolbar>

@@ -1,0 +1,13 @@
+<mat-form-field>
+  <input type="number"
+         class="no-spinners"
+         matInput [matDatepicker]="dp" [placeholder]="placeholder" [formControl]="date">
+  <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+  <mat-datepicker #dp
+                  startView="multi-year"
+                  (yearSelected)="chosenYearHandler($event, dp)">
+  </mat-datepicker>
+  <mat-error>
+    {{date?.errors | prInputFeedback }}
+  </mat-error>
+</mat-form-field>

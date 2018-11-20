@@ -1,0 +1,10 @@
+<a mat-list-item
+   [routerLink]="item.routerLink"
+    routerLinkActive="active-link">
+  <div class="item-content">
+    <mat-icon>
+        {{item.icon}}
+    </mat-icon>
+    <span>{{item.translationKey | translate}}</span>
+  </div>
+</a>

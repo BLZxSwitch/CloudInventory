@@ -1,0 +1,44 @@
+{
+  "index": "/index.html",
+  "assetGroups": [{
+    "name": "app",
+    "installMode": "prefetch",
+    "resources": {
+      "files": [
+        "/favicon.ico",
+        "/index.html",
+        "/*.css",
+        "/*.js"
+      ]
+    }
+  }, {
+    "name": "assets",
+    "installMode": "lazy",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "/assets/**"
+      ],
+      "urls": [
+        "https://fonts.googleapis.com/**"
+      ]
+    }
+  }],
+  "dataGroups": [{
+    "name": "Vats",
+    "urls": ["/api/Vats"],
+    "cacheConfig": {
+      "maxSize": 1,
+      "maxAge": "1d",
+      "strategy": "performance"
+    }
+  }, {
+    "name": "ExpensesTypes",
+    "urls": ["/api/ExpenseTypes"],
+    "cacheConfig": {
+      "maxSize": 1,
+      "maxAge": "1d",
+      "strategy": "performance"
+    }
+  }]
+}

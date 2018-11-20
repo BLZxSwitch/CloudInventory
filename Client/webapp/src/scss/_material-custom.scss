@@ -1,0 +1,111 @@
+@import "material.theme";
+@import "variables";
+@import "media";
+
+a {
+  color: $primary500;
+
+  &:hover {
+    color: $primary500;
+  }
+
+  &:active {
+    color: $primary500;
+  }
+
+  &:focus {
+    color: $primary500;
+  }
+
+  &:visited {
+    color: $primary500;
+  }
+}
+
+$mobile-padding: 20px;
+
+.mat-dialog-container {
+  padding: 40px !important;
+
+  @include mobile {
+    padding: $mobile-padding !important;
+  }
+}
+
+.mat-checkbox-layout {
+  white-space: normal !important;
+}
+
+.mat-dialog-content {
+  margin: 0 -#{$mobile-padding} !important;
+  padding: 0 $mobile-padding !important;
+}
+
+.mat-dialog-actions {
+  @include mobile {
+    margin-bottom: -12px !important;
+  }
+}
+
+.narrow-padding-container .mat-dialog-container {
+  padding: 40px !important;
+  @include mobile {
+    padding: 24px 0 !important;
+  }
+}
+
+.mat-raised-button {
+  text-transform: uppercase;
+}
+
+.mat-drawer-container, .mat-drawer {
+  overflow: initial !important;;
+}
+
+.mat-sidenav.mat-drawer {
+  transform: translate3d(calc(-100% - #{$content-padding}), 0, 0);
+
+  @include mobile {
+    transform: translate3d(calc(-100% - #{$content-padding-mobile}), 0, 0);
+  }
+}
+
+.mat-drawer-container, .mat-drawer-content {
+  z-index: initial !important;;
+}
+
+.mat-drawer.mat-sidenav {
+  height: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.cdk-global-overlay-wrapper {
+  .cdk-overlay-pane {
+    @include mobile {
+      max-width: calc(100% - #{$content-padding-mobile * 4}) !important;
+      width: 100%;
+    }
+  }
+}
+
+.mat-drawer-backdrop {
+  position: fixed !important;
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-error {
+  background-color: $warning500;
+  color: white;
+}
+
+.mat-button.cdk-program-focused .mat-button-focus-overlay {
+  opacity: 0 !important;
+}
+
+.mat-button:hover .mat-button-focus-overlay {
+  opacity: 1 !important;
+}

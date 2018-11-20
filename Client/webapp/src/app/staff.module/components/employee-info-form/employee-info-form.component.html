@@ -1,0 +1,121 @@
+<div class="mat-typography">
+  <div class="page-header">
+    {{ "HEADER" | prFormSegmentTranslation:type }}
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="type === 'edit' ? onSubmit() : this.onSetInvitationFlag(true)" prScrollIntoViewOnInvalid>
+    <mat-dialog-content>
+      <div class="half-width-controls-container">
+        <pr-gender-dropdown [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.GENDER' | translate"
+                            formControlName="gender"></pr-gender-dropdown>
+        <pr-date-selector formControlName="dateOfBirth"
+                          [max]="maxDateOfBirth"
+                          [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.DOB' | translate">
+        </pr-date-selector>
+      </div>
+
+      <pr-input type="number"
+                formControlName="number"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.NUMBER' | translate"></pr-input>
+      <pr-input formControlName="firstName"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.FIRST_NAME' | translate"></pr-input>
+      <pr-input formControlName="lastName"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.LAST_NAME' | translate"></pr-input>
+      <pr-input formControlName="addressLine"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.ADDRESS' | translate"></pr-input>
+      <pr-input formControlName="city"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.CITY' | translate"></pr-input>
+      <pr-input type="number"
+                formControlName="zip"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.ZIP' | translate"></pr-input>
+      <pr-input type="tel"
+                formControlName="phone"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.MOBILE_NUMBER' | translate"></pr-input>
+      <div *ngIf="type == 'edit' && !employee.isInvitationAccepted" class="half-width-controls-container">
+        <pr-input type="email"
+                  formControlName="email"
+                  [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.EMAIL' | translate"></pr-input>
+        <button
+          mat-raised-button
+          type="button"
+          [disabled]="pending"
+          (click)="onSendInvitation(employee)">
+          {{"STAFF.EMPLOYEE_INFO_FORM.SEND_INVITATION" | translate}}
+        </button>
+      </div>
+      <pr-input *ngIf="type == 'add' || employee.isInvitationAccepted"
+                type="email"
+                formControlName="email"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.EMAIL' | translate"></pr-input>
+      <pr-input type="tel"
+                inputmode="numeric"
+                pattern="[0-9\.]*"
+                formControlName="ahvNr"
+                [mask]="{mask: ahvMask}"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.AHV_NUMBER' | translate"></pr-input>
+      <pr-input formControlName="hometown"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.HOMETOWN' | translate"></pr-input>
+      <pr-input formControlName="nationality"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.NATIONALITY' | translate"></pr-input>
+      <pr-input formControlName="notes"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.NOTES' | translate"></pr-input>
+
+      <div class="half-width-controls-container">
+
+        <mat-checkbox formControlName="isAdmin">
+          {{'STAFF.EMPLOYEE_INFO_FORM.IS_ADMIN' | translate}}
+        </mat-checkbox>
+
+        <mat-checkbox formControlName="isActive">
+          {{'STAFF.EMPLOYEE_INFO_FORM.IS_ACTIVE' | translate}}
+        </mat-checkbox>
+
+      </div>
+
+      <div class="info-message" *ngIf="type == 'add'">
+        {{'STAFF.EMPLOYEE_INFO_FORM.INFO_MESSAGE' | translate}}
+      </div>
+    </mat-dialog-content>
+
+
+    <mat-dialog-actions>
+      <div class="actions">
+        <button class="buttons"
+                type="submit"
+                *ngIf="type == 'add'"
+                mat-raised-button
+                color="accent"
+                [disabled]="pending">
+          {{"STAFF.EMPLOYEE_INFO_FORM.SUBMIT_BUTTON.SAVE_AND_INVITE" | translate}}
+        </button>
+
+        <button class="buttons"
+                type="submit"
+                *ngIf="type == 'edit'"
+                mat-raised-button
+                color="accent"
+                [disabled]="pending">
+          {{"SUBMIT_BUTTON" | prFormSegmentTranslation:type}}
+        </button>
+
+        <button class="buttons"
+                type="button"
+                *ngIf="type == 'add'"
+                mat-raised-button
+                color="accent"
+                [disabled]="pending"
+                (click)="onSetInvitationFlag(false)">
+          {{"STAFF.EMPLOYEE_INFO_FORM.SUBMIT_BUTTON.SAVE_ONLY" | translate}}
+        </button>
+
+        <button class="buttons"
+                type="button"
+                mat-raised-button
+                [disabled]="pending"
+                (click)="onCancel()">
+          {{"STAFF.EMPLOYEE_INFO_FORM.CANCEL" | translate}}
+        </button>
+      </div>
+    </mat-dialog-actions>
+  </form>
+</div>

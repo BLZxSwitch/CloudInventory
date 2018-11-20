@@ -1,0 +1,34 @@
+<div class="mat-typography">
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <mat-form-field>
+        <mat-select
+          [placeholder]="'MY_SETTINGS.FORM.LANGUAGE' | translate"
+          formControlName="language">
+          <mat-option *ngFor="let item of languages; trackBy: trackByFn" [value]="item">
+            {{ getlanguageTranslationKey(item) | translate }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="card">
+        <div class="mat-title">{{'MY_SETTINGS.FORM.USER_PICTURE' | translate}}</div>
+
+        <pr-user-picture-editor [hasUserPicture]="hasUserPicture"
+                                [userPicture]="userPicture$|async"></pr-user-picture-editor>
+      </div>
+
+    </form>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button
+            color="accent"
+            (click)="onSubmit()">
+      {{"FORM.SUBMIT_BUTTON.EDIT"|translate}}
+    </button>
+  </mat-card-actions>
+
+</div>

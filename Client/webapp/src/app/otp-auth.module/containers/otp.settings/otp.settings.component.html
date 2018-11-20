@@ -1,0 +1,21 @@
+<mat-card-content>
+  <ng-container [ngSwitch]="userSettings?.isTwoFactorAuthenticationEnabled">
+    <div *ngSwitchCase="true">
+      {{'MY_SETTINGS.OTP.ENABLED' | translate}}
+    </div>
+    <div *ngSwitchDefault>
+      {{'MY_SETTINGS.OTP.DISABLED' | translate}}
+    </div>
+  </ng-container>
+</mat-card-content>
+
+<mat-card-actions>
+  <ng-container [ngSwitch]="userSettings?.isTwoFactorAuthenticationEnabled">
+    <button *ngSwitchCase="true" type="button" mat-stroked-button (click)="onDisable()">
+      {{'MY_SETTINGS.OTP.DISABLE' | translate}}
+    </button>
+    <button *ngSwitchDefault type="button" mat-raised-button color="accent" (click)="onEnable()">
+      {{'MY_SETTINGS.OTP.ENABLE' | translate}}
+    </button>
+  </ng-container>
+</mat-card-actions>

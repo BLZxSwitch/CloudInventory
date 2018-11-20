@@ -1,0 +1,24 @@
+<ng-container [formGroup]="captchaGroup">
+  <ngx-recaptcha2
+    #captchaElem
+    formControlName="recaptcha"
+    *ngIf="isCaptchaVisible"
+    [siteKey]="siteKey"
+    [size]="'normal'"
+    [hl]="lang"
+    [theme]="'light'"
+    [type]="'image'"
+    (expire)="handleExpire()"
+    (load)="handleLoad()">
+  </ngx-recaptcha2>
+  <ngx-invisible-recaptcha
+    #invisibleCaptchaElem
+    formControlName="recaptcha"
+    *ngIf="!isCaptchaVisible"
+    [siteKey]="siteKey"
+    [hl]="lang"
+    [type]="'image'"
+    [badge]="'inline'"
+    (load)="handleLoad()">
+  </ngx-invisible-recaptcha>
+</ng-container>

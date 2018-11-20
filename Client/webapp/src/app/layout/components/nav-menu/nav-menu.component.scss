@@ -1,0 +1,60 @@
+@import "material";
+@import "media";
+
+:host {
+  display: block;
+  margin: -40px;
+  position: relative;
+}
+
+.logout {
+  line-height: 2em;
+  margin: 35px 0 30px 0;
+  width: 100%;
+
+  .logout-content {
+    padding-left: 25px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: $primary300;
+    opacity: 0.8;
+
+    .mat-icon {
+      padding-right: 16px;
+    }
+
+    &:hover {
+      background-color: $menu-item-hover;
+      color: #000000;
+    }
+  }
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  @include mobile {
+    display: none;
+  }
+
+  .mat-icon {
+    font-size: 36px;
+  }
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin-bottom: -10px;
+  padding-left: 25px;
+
+  pr-user-picture {
+    margin-right: 10px;
+  }
+}
+

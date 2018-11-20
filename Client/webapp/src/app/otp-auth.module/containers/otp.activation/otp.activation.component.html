@@ -1,0 +1,5 @@
+<pr-otp-activation [otpLinkResponse]="otpLink$ | async"
+                   (submitted)="onSubmit($event)"
+                   (cancel)="onCancel()"
+                   [errorMessage]="error$ | prDescribe | async">
+</pr-otp-activation>

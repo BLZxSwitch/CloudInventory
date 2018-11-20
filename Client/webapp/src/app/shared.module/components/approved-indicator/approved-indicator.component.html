@@ -1,0 +1,4 @@
+<div class="text-wrapper" [class.approved]="approved" [class.declined]="declined">
+  <span *ngIf="approved">{{"COMMON.APPROVED" | translate}}</span>
+  <span *ngIf="declined">{{"COMMON.DECLINED" | translate}}</span>
+</div>

@@ -1,0 +1,16 @@
+<mat-form-field>
+    <input matInput
+         [matDatepicker]="dp"
+         [type]="getInputType()"
+         [min]="getMinValue()"
+         [max]="getMaxValue()"
+         [placeholder]="placeholder"
+         [errorStateMatcher]="matcher"
+         [formControl]="date"
+         [matDatepickerFilter]="filter">
+  <mat-datepicker-toggle [class.hidden]="isDatePickerHidden()" matSuffix [for]="dp"></mat-datepicker-toggle>
+  <mat-datepicker #dp [startAt]="startAt"></mat-datepicker>
+  <mat-error>
+    {{control?.errors | prInputFeedback }}
+  </mat-error>
+</mat-form-field>

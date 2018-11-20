@@ -1,0 +1,7 @@
+<pr-unauthorized-layout>
+  <pr-otp-enter-code-form (submitted)="onSubmit($event)"
+                          [token]="token$ | async"
+                          [pending]="pending$ | async"
+                          [errorMessage]="error$ | prDescribe | async">
+  </pr-otp-enter-code-form>
+</pr-unauthorized-layout>

@@ -1,0 +1,8 @@
+<pr-employee-info-form [type]="type$ | async"
+                       [employee]="employee$ | async"
+                       [pending]="pending$ | async"
+                       (submitForm)="onSubmit($event)"
+                       (sendInvitation)="onSendInvitation($event)"
+                       (setInvitationFlag)="onSetInvitationFlag($event)"
+                       (cancel)="onCancel()">
+</pr-employee-info-form>

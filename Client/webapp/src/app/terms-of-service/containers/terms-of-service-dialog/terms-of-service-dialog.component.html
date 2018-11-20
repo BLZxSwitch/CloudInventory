@@ -1,0 +1,28 @@
+<div class="mat-typography">
+  <div class="page-header">
+    {{"TERMS_OF_SERVICE.HEADER" | translate}}
+  </div>
+
+  <div class="page-subheader">
+    {{"TERMS_OF_SERVICE.SUBHEADER" | translate}}
+  </div>
+  <mat-dialog-content>
+
+    <pr-terms-of-service [fullPage]="false" [inDialog]="true"></pr-terms-of-service>
+
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <div class="buttons">
+      <button mat-raised-button
+              color="accent"
+              (click)="onSubmit()">
+        {{"TERMS_OF_SERVICE.ACCEPT" | translate}}
+      </button>
+
+      <button mat-raised-button
+              (click)="onCancel()">
+        {{"TERMS_OF_SERVICE.DECLINE" | translate}}
+      </button>
+    </div>
+  </mat-dialog-actions>
+</div>

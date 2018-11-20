@@ -1,0 +1,25 @@
+@import "media";
+
+:host {
+  padding: 0 2px;
+}
+
+.has-icon {
+  @include mobile() {
+    display: none;
+  }
+
+  .sidenav-is-shown & {
+    @include tablet() {
+      display: none;
+    }
+  }
+}
+
+.mat-button {
+  min-width: auto;
+
+  &.sidenav-is-shown {
+    padding: 0 12px;
+  }
+}

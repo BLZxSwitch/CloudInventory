@@ -1,0 +1,12 @@
+<div class="label">
+  {{label}}
+</div>
+<div *ngIf="hasValue">
+  <span *ngIf="!checkbox">{{value}}</span>
+  <mat-checkbox *ngIf="checkbox"
+                [ngModel]="value">
+  </mat-checkbox>
+</div>
+<div *ngIf="!hasValue">
+  <ng-content></ng-content>
+</div>

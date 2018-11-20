@@ -1,0 +1,23 @@
+<div class="row">
+  <img *ngIf="hasUserPicture"
+       [prFromBlob]="userPicture"
+       width="100"
+       height="100"/>
+
+  <pr-file-input *ngIf="!hasUserPicture || editing"
+                 [multiple]="false"
+                 accept="image/*"
+                 (upload)="onUpload($event)">
+  </pr-file-input>
+</div>
+<div *ngIf="hasUserPicture">
+  <pr-button icon="edit"
+             (click)="edit()">
+    {{'COMMON.BUTTONS.EDIT' | translate}}
+  </pr-button>
+
+  <pr-button icon="delete"
+             (click)="delete()">
+    {{'COMMON.BUTTONS.DELETE' | translate}}
+  </pr-button>
+</div>

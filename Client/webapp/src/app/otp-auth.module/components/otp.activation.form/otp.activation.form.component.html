@@ -1,0 +1,78 @@
+<form id="otp-form" class="mat-typography" (ngSubmit)="onSubmit()" autoComplete="off">
+
+  <div mat-dialog-title>
+    {{ "OTP.ENABLE_FORM.TITLE" | translate }}
+  </div>
+
+  <mat-dialog-content>
+    <mat-vertical-stepper [linear]="true">
+      <mat-step>
+        <ng-template matStepLabel>
+          {{ "OTP.ENABLE_FORM.FIRST_STEP_TITLE" | translate}}
+        </ng-template>
+
+        <pr-otp-installer></pr-otp-installer>
+
+        <div class="buttons">
+          <button type="button"
+                  mat-raised-button
+                  (click)="onCancel()">
+            {{ "COMMON.BUTTONS.CANCEL" | translate }}
+          </button>
+          <button type="button"
+                  matStepperNext
+                  mat-raised-button
+                  color="accent">
+            {{ "OTP.ENABLE_FORM.NEXT_STEP" | translate}}
+          </button>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="formGroupGenerator">
+        <ng-template matStepLabel>
+          {{ "OTP.ENABLE_FORM.SECOND_STEP_TITLE" | translate}}
+        </ng-template>
+
+        <pr-otp-generator [formGroup]="formGroupGenerator"></pr-otp-generator>
+
+        <div class="buttons">
+          <button mat-raised-button matStepperPrevious>
+            {{ "OTP.ENABLE_FORM.BACK" | translate}}
+          </button>
+
+          <button type="button"
+                  matStepperNext
+                  mat-raised-button
+                  color="accent"
+                  (click)="showErrorsForGenerator()">
+            {{ "OTP.ENABLE_FORM.NEXT_STEP" | translate}}
+          </button>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="formGroupValidator">
+        <ng-template matStepLabel>
+          {{ "OTP.ENABLE_FORM.THIRD_STEP_TITLE" | translate}}
+        </ng-template>
+
+        <pr-otp-validator [formGroup]="formGroupValidator"></pr-otp-validator>
+
+        <mat-error *ngIf="errorMessage">
+          {{ errorMessage }}
+        </mat-error>
+
+        <div class="buttons">
+          <button mat-raised-button matStepperPrevious>
+            {{ "OTP.ENABLE_FORM.BACK" | translate}}
+          </button>
+
+          <button type="submit"
+                  matStepperNext
+                  mat-raised-button
+                  color="accent">
+            {{ "OTP.ENABLE_FORM.ACTIVATE" | translate}}
+          </button>
+        </div>
+      </mat-step>
+    </mat-vertical-stepper>
+  </mat-dialog-content>
+
+</form>

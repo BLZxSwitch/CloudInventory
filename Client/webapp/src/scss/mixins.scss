@@ -1,0 +1,137 @@
+@import "media";
+@import "variables";
+
+@mixin mobile-padding($padding, $half) {
+  @if $half {
+    padding-left: $padding/2;
+    padding-right: $padding/2;
+  } @else {
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+}
+
+@mixin card-horizontal-padding($half-mobile: false) {
+
+  @include mobile {
+    @include mobile-padding(40px, $half-mobile);
+  }
+
+  @include mobile-small {
+    @include mobile-padding(30px, $half-mobile);
+  }
+
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@mixin page {
+  padding: $page-top-padding-desktop-tablet 40px 40px 40px;
+
+  @include mobile {
+    padding: $page-top-padding-mobile 8px 8px 8px;
+  }
+}
+
+@mixin narrow-page {
+  @include page;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+  > * {
+    max-width: 430px;
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+  }
+
+  .mat-card {
+    box-sizing: border-box;
+    padding-top: 45px;
+    padding-bottom: 50px;
+
+    @include mobile {
+      padding-top: 35px;
+      padding-bottom: 40px;
+    }
+
+    @include mobile-small {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    @include card-horizontal-padding;
+  }
+}
+
+@mixin content-page {
+  @include page;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+  > * {
+    max-width: 740px;
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+  }
+
+  @include mobile {
+    > * {
+      max-width: 430px;
+      margin: 0 auto;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  @include mobile-small {
+    > * {
+      max-width: 430px;
+      margin: 0 auto;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .mat-card {
+    box-sizing: border-box;
+    padding-top: 45px;
+    padding-bottom: 50px;
+
+    @include mobile {
+      padding-top: 35px;
+      padding-bottom: 40px;
+    }
+
+    @include mobile-small {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    @include card-horizontal-padding;
+  }
+}
+
+@mixin layout-transition($transitionProperty) {
+  transition: .2s $transitionProperty linear;
+}
+
+@mixin filter-layout() {
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+
+    & > * {
+      margin: 0 10px;
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+}
+

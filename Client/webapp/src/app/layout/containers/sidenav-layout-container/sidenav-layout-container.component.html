@@ -1,0 +1,7 @@
+<pr-sidenav-layout (sidenavOpen)="onSidenavOpen()"
+                   (sidenavClose)="onSidenavClose()"
+                   [showSidenav]="showSidenav$|async"
+                   [mobile]="mobile$|async">
+  <ng-content></ng-content>
+  <ng-content select="pr-entity-add-button"></ng-content>
+</pr-sidenav-layout>

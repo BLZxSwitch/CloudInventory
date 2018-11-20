@@ -1,0 +1,43 @@
+@import "material.theme";
+@import "media";
+
+input[type="file"] {
+  display: none;
+}
+
+:host /deep/ {
+  .drop-zone {
+    border-color: $primary500 !important;
+
+    & > * {
+      color: $primary500 !important;
+    }
+  }
+}
+
+.mobile-button-label{
+  cursor: pointer;
+}
+
+.mobile {
+  display: none;
+  @include mobile {
+    display: block;
+  }
+}
+
+.desktop-and-tablet {
+  display: none;
+  @include desktop-and-tablet {
+    display: block;
+  }
+}
+
+.choose-file {
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    color: $accent500;
+  }
+}

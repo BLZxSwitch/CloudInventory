@@ -1,0 +1,22 @@
+<pr-sidenav-layout-container>
+
+  <mat-card class="mat-typography">
+    <div class="page-header">
+      {{ "STAFF.EMPLOYEES_LIST.HEADER" | translate }}
+    </div>
+
+    <div>
+      <pr-employees-filter></pr-employees-filter>
+      <pr-employee-list-item
+        *ngFor="let employee of employees$ | async; trackBy: trackByFn"
+        [employee]="employee"
+        [showDelete]="(employeeId$ | async) !== employee.id"
+        (edit)="onEdit(employee.id)"
+        (delete)="onDelete(employee.id)"
+        (sendInvitation)="onSendInvitation($event)">
+      </pr-employee-list-item>
+    </div>
+
+  </mat-card>
+  <pr-entity-add-button (entityAdd)="onEntityAdd()"></pr-entity-add-button>
+</pr-sidenav-layout-container>

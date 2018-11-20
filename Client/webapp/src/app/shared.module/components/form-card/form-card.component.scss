@@ -1,0 +1,27 @@
+@import "../../../../scss/media";
+
+.mat-card {
+  box-sizing: border-box;
+  padding-top: 40px;
+
+  /deep/ .mat-card-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  /deep/ .mat-card-content {
+    margin: 25px;
+
+    @include mobile {
+      margin: 15px;
+    }
+  }
+
+  /deep/ .mat-card-actions{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -4px;
+    margin-bottom: -4px;
+  }
+}

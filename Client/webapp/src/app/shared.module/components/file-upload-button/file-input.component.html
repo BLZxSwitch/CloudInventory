@@ -1,0 +1,34 @@
+<div class="desktop-and-tablet">
+  <file-drop (onFileDrop)="onFileDrop($event)">
+    <span (click)="onAddClick()" class="choose-file">
+      <span *ngIf="message">{{message}}</span>
+      <span *ngIf="!message">{{'COMMON.FILE_INPUT.CHOOSE_FILE'|translate}}</span>
+      </span>
+    <span>&nbsp;</span>
+    <span>{{'COMMON.FILE_INPUT.DRAG_IT'|translate}}</span>
+  </file-drop>
+
+  <input #fileInput
+         type="file"
+         [attr.multiple]="multiple ? true : null"
+         [accept]="accept"
+         (change)="onFileInputChange($event)"/>
+</div>
+
+<div class="mobile">
+  <button mat-mini-fab
+          #mobileButton
+          type="button"
+          [disabled]="pending"
+          (click)="onAddClick()">
+    <mat-icon *ngIf="!pending">add</mat-icon>
+    <mat-icon *ngIf="pending">
+      <img width="24" height="24" src="/assets/img/pending.svg"/>
+    </mat-icon>
+  </button>
+
+  <span (click)="onMobileButtonLabelClick()" class="mobile-button-label">
+  {{"COMMON.FILE_INPUT.CHOOSE_FILE" | translate}}
+  </span>
+</div>
+

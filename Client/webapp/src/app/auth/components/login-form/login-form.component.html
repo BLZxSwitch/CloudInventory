@@ -1,0 +1,57 @@
+<div class="login-form-container mat-typography">
+
+  <mat-card class="content-card">
+    <div class="page-header">
+      {{ "AUTH.LOGIN.HEADER" | translate }}
+    </div>
+
+    <mat-card-content>
+      <form [formGroup]="form"
+            (ngSubmit)="onSubmit()">
+
+        <pr-input type="email"
+                  [placeholder]="'AUTH.LOGIN.EMAIL' | translate"
+                  formControlName="email"></pr-input>
+
+        <pr-input type="password"
+                  class="password"
+                  [placeholder]="'AUTH.LOGIN.PASSWORD' | translate"
+                  formControlName="password"></pr-input>
+
+        <pr-captcha [captchaGroup]="captchaGroup">
+        </pr-captcha>
+
+        <mat-error *ngIf="errorMessage">
+          {{ errorMessage }}
+        </mat-error>
+
+        <div class="login-and-remember-controls">
+          <mat-checkbox formControlName="rememberMe"
+                        color="accent">
+            {{ "AUTH.LOGIN.REMEMBER_ME" | translate }}
+          </mat-checkbox>
+
+          <button type="submit"
+                  class="login-and-remember-controls__login-button"
+                  mat-raised-button
+                  [disabled]="pending"
+                  color="accent">
+            {{ "AUTH.LOGIN.BUTTON_TEXT" | translate }}
+          </button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="links-container">
+    <a [routerLink]="createUrl">
+      {{ "AUTH.LOGIN.REGISTER_TEXT" | translate }}
+    </a>
+
+    <a [routerLink]="forgotUrl">
+      {{ "AUTH.LOGIN.FORGOT_PASSWORD" | translate }}
+    </a>
+  </div>
+
+</div>

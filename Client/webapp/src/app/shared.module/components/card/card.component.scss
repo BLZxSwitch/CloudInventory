@@ -1,0 +1,41 @@
+@import "../../../../scss/media";
+
+$space: 30px;
+
+.mat-card {
+  box-sizing: border-box;
+  padding-top: 40px;
+
+  /deep/ .mat-card-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  /deep/ > .mat-card-content {
+    margin: 25px;
+
+    @include mobile {
+      margin: 15px;
+    }
+    & > * {
+      padding-top: $space / 2;
+      padding-bottom: $space / 2;
+    }
+
+    & > *:first-child {
+      padding-top: unset;
+    }
+
+    & > *:last-child {
+      padding-bottom: $space;
+    }
+  }
+
+  /deep/ .mat-card-actions{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -4px;
+    margin-bottom: -4px;
+  }
+}

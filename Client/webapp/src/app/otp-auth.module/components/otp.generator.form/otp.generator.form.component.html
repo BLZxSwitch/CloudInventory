@@ -1,0 +1,23 @@
+<div [formGroup]="formGroup" class="mat-typography">
+  <p class="qrcode">
+    <qrcode
+      [qrdata]="otpLink"
+      [size]="256"
+      [level]="'Q'">
+    </qrcode>
+  </p>
+  <p class="text">
+    {{ "OTP.GENERATOR.SECRET_KEY_WARNING" | translate }}
+  </p>
+  <div>
+    {{ "OTP.GENERATOR.SECRET_KEY" | translate }}
+  </div>
+  <p>
+    {{ secretKey }}
+  </p>
+  <p>
+    <mat-checkbox formControlName="done" color="accent">
+      {{ "OTP.GENERATOR.DONE" | translate }}
+    </mat-checkbox>
+  </p>
+</div>

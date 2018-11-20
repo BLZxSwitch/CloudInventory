@@ -1,0 +1,14 @@
+<div class="text-wrapper" [ngSwitch]="State">
+  <div *ngSwitchCase="EmployeeState.IsInvited"
+       class="invited">{{"STAFF.EMPLOYEE_INFO_FORM.INVITED" | translate}}
+  </div>
+  <div *ngSwitchCase="EmployeeState.IsNotInvited"
+       class="not-invited">{{"STAFF.EMPLOYEE_INFO_FORM.NOT_INVITED" | translate}}
+  </div>
+  <div *ngSwitchCase="EmployeeState.IsActive"
+       class="is-active">{{"STAFF.EMPLOYEE_INFO_FORM.IS_ACTIVE" | translate}}
+  </div>
+  <div *ngSwitchCase="EmployeeState.IsDisabled"
+       class="is-disabled">{{"STAFF.EMPLOYEE_INFO_FORM.IS_DISABLED" | translate}}
+  </div>
+</div>

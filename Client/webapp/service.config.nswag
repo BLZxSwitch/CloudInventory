@@ -1,0 +1,49 @@
+﻿{
+  "runtime": "Default",
+  "swaggerGenerator": {
+    "fromSwagger": {
+      "url": "http://localhost:51600/swagger/v1/swagger.json",
+      "output": undefined
+    }
+  },
+  "codeGenerators": {
+    "swaggerToTypeScriptClient": {
+      "className": "{controller}ServiceProxy",
+      "moduleName": "",
+      "namespace": "",
+      "typeScriptVersion": 2.6,
+      "template": "Angular",
+      "promiseType": "Promise",
+      "httpClass": "HttpClient",
+      "injectionTokenType": "InjectionToken",
+      "dateTimeType": "Date",
+      "undefinedValue": "Undefined",
+      "generateClientClasses": true,
+      "generateClientInterfaces": false,
+      "generateOptionalParameters": false,
+      "wrapDtoExceptions": false,
+      "wrapResponses": false,
+      "generateResponseClasses": true,
+      "responseClass": "SwaggerResponse",
+      "useTransformOptionsMethod": false,
+      "useTransformResultMethod": false,
+      "generateDtoTypes": true,
+      "operationGenerationMode": "MultipleClientsFromOperationId",
+      "markOptionalProperties": false,
+      "generateCloneMethod": false,
+      "typeStyle": "Class",
+      "extensionCode": "./src/app/core/services/service.extensions.ts",
+      "generateDefaultValues": true,
+      "excludedTypeNames": [],
+      "handleReferences": false,
+      "generateConstructorInterface": true,
+      "convertConstructorInterfaceData": false,
+      "importRequiredTypes": true,
+      "useGetBaseUrlMethod": false,
+      "baseUrlTokenName": "API_BASE_URL",
+      "queryundefinedValue": "",
+      "output": "./src/app/core/services/service-proxies.ts",
+      "rxJsVersion": "6.0"
+    }
+  }
+}

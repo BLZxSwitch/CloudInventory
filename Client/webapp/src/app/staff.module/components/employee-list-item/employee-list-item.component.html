@@ -1,0 +1,62 @@
+<mat-card class="mat-typography">
+  <pr-employee-state [employee]="employee"></pr-employee-state>
+  <div class="controls" [class.show-more]="showMore">
+    <pr-static-field [label]="'#'"
+                     [value]="employee.number"
+                     class="number"></pr-static-field>
+    <pr-static-field [label]="'STAFF.EMPLOYEE_INFO_FORM.GENDER' | translate"
+                     [value]="genderTranslationKey | translate"
+                     class="gender"></pr-static-field>
+    <pr-static-field [label]="'STAFF.EMPLOYEE_INFO_FORM.FULL_NAME' | translate"
+                     [value]="employee.fullName"
+                     class="full-name"></pr-static-field>
+    <pr-static-field [label]="'STAFF.EMPLOYEE_INFO_FORM.DOB' | translate"
+                     [value]="employee.dateOfBirth | prDate"
+                     class="dob"></pr-static-field>
+    <pr-static-field [label]="'STAFF.EMPLOYEE_INFO_FORM.EMAIL' | translate"
+                     [value]="employee.email"
+                     class="email"></pr-static-field>
+    <pr-static-field [label]="'STAFF.EMPLOYEE_INFO_FORM.AHV_NUMBER' | translate"
+                     [value]="employee.ahvNr"
+                     class="ahv"></pr-static-field>
+    <pr-static-field [label]="'STAFF.EMPLOYEE_INFO_FORM.MOBILE_NUMBER' | translate"
+                     [value]="employee.phone"
+                     class="phone"></pr-static-field>
+    <pr-static-field [label]="'STAFF.EMPLOYEE_INFO_FORM.HOMETOWN' | translate"
+                     [value]="employee.hometown"
+                     class="hometown"></pr-static-field>
+    <pr-static-field [label]="'STAFF.EMPLOYEE_INFO_FORM.NATIONALITY' | translate"
+                     [value]="employee.nationality"
+                     class="nationality"></pr-static-field>
+    <pr-static-field [label]="'STAFF.EMPLOYEE_INFO_FORM.ADDRESS' | translate"
+                     [value]="employee.addressLine1"
+                     class="address"></pr-static-field>
+    <pr-static-field [label]="'STAFF.EMPLOYEE_INFO_FORM.NOTES' | translate"
+                     [value]="employee.notes"
+                     class="notes"></pr-static-field>
+  </div>
+
+  <div class="buttons">
+    <pr-more-toggle-button (click)="onShowMoreToggle()"
+                           class="show-more-button"
+                           [isExpanded]="showMore">
+    </pr-more-toggle-button>
+
+    <pr-button icon="mail"
+               *ngIf="employee.isActive && !employee.isInvitationAccepted"
+               (click)="onSendInvitation()">
+      {{'STAFF.EMPLOYEES_LIST.INVITE' | translate}}
+    </pr-button>
+
+    <pr-button icon="edit"
+               (click)="onEditClick()">
+      {{'COMMON.BUTTONS.EDIT' | translate}}
+    </pr-button>
+    <pr-button icon="delete"
+               *ngIf="showDelete"
+               (click)="onDeleteClick()">
+      {{'COMMON.BUTTONS.DELETE' | translate}}
+    </pr-button>
+  </div>
+
+</mat-card>

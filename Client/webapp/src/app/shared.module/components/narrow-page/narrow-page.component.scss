@@ -1,0 +1,9 @@
+@import "mixins";
+
+:host {
+  @include narrow-page;
+
+  .mat-card.expanded {
+    max-width: 740px;
+  }
+}

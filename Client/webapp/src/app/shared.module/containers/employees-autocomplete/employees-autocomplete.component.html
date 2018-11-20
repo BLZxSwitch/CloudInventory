@@ -1,0 +1,23 @@
+<mat-form-field [formGroup]="form"
+                *ngIf="!static">
+  <input matInput
+         formControlName="searchText"
+         [errorStateMatcher]="matcher"
+         [placeholder]="placeholder"
+         (change)="deselectEmployee()"
+         [matAutocomplete]="auto">
+  <mat-error *ngIf="control?.touched">
+    {{control?.errors | prInputFeedback }}
+  </mat-error>
+  <mat-autocomplete #auto="matAutocomplete"
+                    [displayWith]="displayFn">
+    <mat-option *ngFor="let option of optionsFiltered$ | async; trackBy: trackByFn"
+                [value]="option.value"
+                (onSelectionChange)="onValueChange($event)">
+      {{option.name | translate}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+<pr-static-field *ngIf="static"
+                 [label]="placeholder"
+                 [value]="employeeFullName$|async"></pr-static-field>

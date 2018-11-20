@@ -1,0 +1,44 @@
+@import "media";
+@import "variables";
+@import "mixins";
+
+.fab-container {
+  position: absolute;
+  right: 0;
+  top: calc(#{$backdrop-height-desktop} - #{$page-top-padding-desktop-tablet});
+  bottom: 0;
+  transform: translateX(50%);
+  z-index: 1;
+  @include layout-transition(top);
+
+  &.scrolled {
+    @include desktop {
+      top: calc(#{$toolbar-minimized-height-tablet} - #{$backdrop-height-desktop} + #{$page-top-padding-desktop-tablet});
+    }
+    @include tablet {
+      top: calc(#{$toolbar-minimized-height-tablet} - #{$backdrop-height-tablet} + #{$page-top-padding-desktop-tablet});
+    }
+  }
+
+  .mat-fab {
+    position: sticky;
+    top: $toolbar-minimized-height-desktop;
+    transform: translateY(-50%);
+
+    @include tablet {
+      top: $toolbar-minimized-height-tablet;
+    }
+
+    @include mobile {
+      top: initial;
+      bottom: 16px;
+      transform: initial;
+    }
+  }
+
+  @include mobile {
+    transform: translateX(-10%);
+    display: flex;
+    align-items: flex-end;
+  }
+}

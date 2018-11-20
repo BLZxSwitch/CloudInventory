@@ -1,0 +1,11 @@
+@import "media";
+
+a.install {
+  min-width: 160px;
+}
+
+@include mobile {
+  a.install {
+    width: 100%;
+  }
+}

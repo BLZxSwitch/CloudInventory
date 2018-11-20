@@ -1,0 +1,20 @@
+<div class="files" [class.vertical]="vertical">
+  <div *ngFor="let file of files; trackBy: trackByFn; let index = index"
+       class="file">
+    <ng-container *ngIf="fileTemplate"
+                  [ngTemplateOutlet]="fileTemplate"
+                  [ngTemplateOutletContext]="{file: file, index: index}">
+    </ng-container>
+    <button mat-button
+            color="error"
+            *ngIf="file"
+            (click)="onDelete(file)">
+      {{ "COMMON.BUTTONS.DELETE" | translate }}
+    </button>
+  </div>
+</div>
+
+<pr-file-input [pending]="pending"
+                       [accept]="accept"
+                       (upload)="onUpload($event)">
+</pr-file-input>

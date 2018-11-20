@@ -1,0 +1,30 @@
+@import "media";
+
+.mat-dialog-content {
+  overflow: visible;
+  max-height: none;
+}
+
+.page-header {
+  margin-bottom: 20px;
+
+  @include mobile {
+    margin-bottom: 10px;
+  }
+}
+
+pr-terms-of-service {
+  margin-bottom: 5px;
+}
+
+.page-subheader {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 10px;
+
+  @include mobile {
+    margin-bottom: 0;
+  }
+}
+

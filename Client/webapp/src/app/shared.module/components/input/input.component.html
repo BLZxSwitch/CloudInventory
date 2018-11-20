@@ -1,0 +1,16 @@
+<mat-form-field appearance="standard" color="accent">
+  <mat-label>{{placeholder}}</mat-label>
+  <input matInput
+         [formControl]="input"
+         [errorStateMatcher]="matcher"
+         [name]="formControlName"
+         [type]="type"
+         [attr.inputmode]="inputmode ? inputmode : null"
+         [attr.pattern]="pattern ? pattern : null"
+         [attr.id]="id ? id : null"
+         [attr.autoComplete]="autoComplete ? autoComplete : null"
+         [textMask]="mask || {mask: false}">
+  <mat-error>
+    {{control?.errors | prInputFeedback }}
+  </mat-error>
+</mat-form-field>

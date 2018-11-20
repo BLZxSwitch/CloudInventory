@@ -1,0 +1,56 @@
+@import "~include-media/dist/include-media";
+@import "./break-points";
+
+@mixin desktop {
+  @include media('>desktop') {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include media('>=tablet', '<=desktop') {
+    @content;
+  }
+}
+
+@mixin tablet2x {
+  @include media('retina2x', '>=tablet', '<=desktop') {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include media('<tablet') {
+    @content;
+  }
+}
+
+@mixin mobile2x {
+  @include media('retina2x', '<tablet') {
+    @content;
+  }
+}
+
+@mixin mobile3x {
+  @include media('retina3x', '<tablet') {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @include media('<=phone') {
+    @content;
+  }
+}
+
+@mixin tablet-and-mobile {
+  @include media('<=desktop') {
+    @content;
+  }
+}
+
+@mixin desktop-and-tablet {
+  @include media('>=tablet') {
+    @content;
+  }
+}

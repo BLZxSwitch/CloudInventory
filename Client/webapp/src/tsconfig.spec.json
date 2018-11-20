@@ -1,0 +1,23 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "downlevelIteration": true,
+    "outDir": "../out-spec",
+    "baseUrl": "./",
+    "target": "es6",
+    "module": "commonjs",
+    "types": [
+      "jasmine",
+      "node"
+    ]
+  },
+  "files": [
+    "test.ts",
+    "unit-tests.index.ts",
+    "polyfills.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts"
+  ]
+}

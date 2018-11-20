@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "downlevelIteration": true,
+    "outDir": "../out-tsc/app",
+    "baseUrl": "./",
+    "module": "es2015",
+    "types": []
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts",
+    "unit-tests.components/**/*",
+    "unit-tests.index.ts"
+  ]
+}

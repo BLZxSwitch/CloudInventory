@@ -1,0 +1,11 @@
+<button mat-button
+        [disabled]="disabled"
+        type="button"
+        [class.sidenav-is-shown]="showSidenav$|async">
+  <mat-icon *ngIf="icon">
+    {{icon}}
+  </mat-icon>
+  <span [class.has-icon]="icon">
+      <ng-content></ng-content>
+  </span>
+</button>

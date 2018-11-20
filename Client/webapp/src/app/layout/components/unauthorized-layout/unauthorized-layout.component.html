@@ -1,0 +1,7 @@
+<pr-basic-layout>
+  <pr-toolbar [minimized]="scrolled$|async">
+  </pr-toolbar>
+  <ng-content></ng-content>
+  <pr-loading-indicator [isVisible]="loadingIndicatorIsVisible$|async">
+  </pr-loading-indicator>
+</pr-basic-layout>

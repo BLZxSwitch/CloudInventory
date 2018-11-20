@@ -1,0 +1,11 @@
+<div class="text-content mat-typography"
+     [innerHTML]="html$|async"
+     [class.not-full-page]="!fullPage"
+     [class.in-dialog]="inDialog"></div>
+
+<a *ngIf="!fullPage"
+   class="link"
+   [routerLink]="termsOfServiceUrl"
+   target="_blank">
+  {{ "TERMS_OF_SERVICE.FULL_PAGE_LINK" | translate }}
+</a>

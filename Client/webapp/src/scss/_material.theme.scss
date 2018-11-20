@@ -1,0 +1,117 @@
+@import '~@angular/material/theming';
+
+$md-primary: (
+  50 : #e0e0e0,
+  100 : #b3b3b3,
+  200 : #808080,
+  300 : #4d4d4d,
+  400 : #262626,
+  500 : #000000,
+  600 : #000000,
+  700 : #000000,
+  800 : #000000,
+  900 : #000000,
+  A100 : #a6a6a6,
+  A200 : #8c8c8c,
+  A400 : #737373,
+  A700 : #666666,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$md-accent: (
+  50 : #fff9e4,
+  100 : #fef0bc,
+  200 : #fee690,
+  300 : #fedc64,
+  400 : #fdd542,
+  500 : #fdcd21,
+  600 : #fdc81d,
+  700 : #fcc118,
+  800 : #fcba14,
+  900 : #fcae0b,
+  A100 : #ffffff,
+  A200 : #fffbf2,
+  A400 : #ffe9bf,
+  A700 : #ffe0a6,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$md-warning: (
+  50 : #fbe9e7,
+  100 : #f4c7c3,
+  200 : #eda29b,
+  300 : #e67c73,
+  400 : #e06055,
+  500 : #db4437,
+  600 : #d73e31,
+  700 : #d2352a,
+  800 : #cd2d23,
+  900 : #c41f16,
+  A100 : #fff6f6,
+  A200 : #ffc5c3,
+  A400 : #ff9490,
+  A700 : #ff7c76,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$cloudinventory-app-primary: mat-palette($md-primary);
+$cloudinventory-app-accent: mat-palette($md-accent);
+$cloudinventory-app-warning: mat-palette($md-warning);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$cloudinventory-app-theme: mat-light-theme($cloudinventory-app-primary, $cloudinventory-app-accent, $cloudinventory-app-warning);
+
+$primary500: mat-color($cloudinventory-app-primary, 500);
+$accent500: mat-color($cloudinventory-app-accent, 500);
+$warning500: mat-color($cloudinventory-app-warning, 500);
+
+$menu-item-hover: mat-color($cloudinventory-app-primary, 50);
+$primary300: mat-color($cloudinventory-app-primary, 300);

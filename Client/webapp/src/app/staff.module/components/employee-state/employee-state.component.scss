@@ -1,0 +1,32 @@
+@import "media";
+@import "../../../../scss/app";
+
+.text-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 25px;
+  text-orientation: mixed;
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
+  text-align: center;
+  cursor: default;
+
+  .invited {
+    color: white;
+    background-color: mat-color($cloudinventory-app-primary, 500);
+  }
+  .not-invited {
+    color: unset;
+    background-color: mat-color($cloudinventory-app-primary, 100);
+  }
+  .is-active {
+    color: unset;
+    background-color: $accent500;
+  }
+  .is-disabled {
+    color: unset;
+    background-color: mat-color($cloudinventory-app-primary, 100);
+  }
+}

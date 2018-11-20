@@ -1,0 +1,20 @@
+<pr-sidenav-layout-container>
+  <pr-card>
+    <mat-card-title>
+      {{ "MY_SETTINGS.TITLE" | translate }}
+    </mat-card-title>
+
+    <pr-user-settings-form [userSettings]="userSettings$ | async"
+                            (submitForm)="onSubmit($event)"></pr-user-settings-form>
+  </pr-card>
+
+  <pr-card>
+    <mat-card-title>
+      {{ "MY_SETTINGS.OTP.TITLE" | translate }}
+    </mat-card-title>
+
+    <pr-otp-settings [userSettings]="userSettings$ | async">
+    </pr-otp-settings>
+  </pr-card>
+
+</pr-sidenav-layout-container>

@@ -1,0 +1,30 @@
+<div class="mat-typography">
+
+  <button mat-icon-button
+          class="back-button"
+          (click)="onBackButtonClick()">
+    <mat-icon>
+      keyboard_arrow_left
+    </mat-icon>
+  </button>
+
+  <div class="user-info">
+    <pr-user-picture [currentUser]="true"></pr-user-picture>
+    {{currentUserFullName}}
+  </div>
+
+
+  <pr-nav-group *ngFor="let navGroup of navGroups; trackBy: trackByFn"
+                [header]="navGroup.headerTranslationKey | translate"
+                [items]="navGroup.items"></pr-nav-group>
+
+  <div class="logout">
+    <a class="logout-content"
+       (click)="onLogoutClick()">
+      <mat-icon>
+        exit_to_app
+      </mat-icon>
+      <span>{{"NAV_MENU.LOGOUT" | translate}}</span>
+    </a>
+  </div>
+</div>

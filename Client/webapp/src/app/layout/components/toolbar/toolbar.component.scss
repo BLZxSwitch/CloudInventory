@@ -1,0 +1,107 @@
+@import "media";
+@import "mixins";
+@import "variables";
+
+@mixin minimized-height {
+  height: $toolbar-minimized-height-desktop;
+
+  @include tablet {
+    height: $toolbar-minimized-height-tablet;
+  }
+
+  @include mobile {
+    height: $toolbar-minimized-height-mobile;
+  }
+}
+
+:host {
+  position: fixed;
+  height: $page-top-padding-desktop-tablet;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  @include layout-transition(height);
+
+  @include mobile {
+    height: $page-top-padding-mobile;
+  }
+
+  img {
+    @include layout-transition(height);
+    height: 60%;
+    z-index: 1;
+
+    @include mobile {
+      height: 70%;
+    }
+
+    &.shift {
+      transform: translateX(#{$sidenav-desktop-width / 2});
+
+      @include tablet-and-mobile {
+        transform: translateX(#{$sidenav-tablet-and-mobile-width / 2});
+      }
+    }
+
+    &.transition {
+      transition-duration: .4s;
+      transition-timing-function: cubic-bezier(.25, .8, .25, 1);
+      transition-property: transform;
+    }
+  }
+
+  .backdrop-container {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &.box-shadow {
+      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .mat-toolbar {
+    height: 100%;
+    flex-shrink: 0;
+    justify-content: center;
+
+    .version {
+      @include minimized-height;
+      z-index: 2;
+      font-size: small;
+      position: absolute;
+      top: 6px;
+      right: 12px;
+      color: white;
+    }
+  }
+
+  .hamburger-container {
+    @include minimized-height;
+    position: absolute;
+    top: 0;
+    left: 6px;
+    display: flex;
+    align-items: center;
+
+    .mat-icon {
+      font-size: 28px;
+      line-height: 26px;
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .mat-icon-button {
+    color: white;
+  }
+
+  &.minimized {
+    @include minimized-height;
+  }
+}

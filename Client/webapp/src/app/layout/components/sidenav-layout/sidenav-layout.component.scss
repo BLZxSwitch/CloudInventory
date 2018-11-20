@@ -1,0 +1,67 @@
+@import "media";
+@import "variables";
+@import "mixins";
+
+.sidenav {
+  width: $sidenav-desktop-width;
+  padding: 40px;
+  box-sizing: border-box;
+  height: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  overflow: auto;
+
+  display: grid;
+
+  .menu-container {
+    align-self: start;
+  }
+  .menu-logo {
+    align-self: end;
+    margin-top: 20px;
+    margin-bottom: -20px;
+    max-width: 230px;
+  }
+
+  @include tablet-and-mobile {
+    width: $sidenav-tablet-and-mobile-width;
+  }
+}
+
+.page {
+  @include page;
+}
+
+.mat-sidenav-container {
+  background-color: transparent;
+  height: 100%;
+}
+
+/deep/ .mat-sidenav-content.mat-drawer-content {
+  overflow: visible;
+
+  & > * {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+.mat-sidenav {
+  background-color: transparent;
+}
+
+/deep/ .content {
+  position: relative;
+
+  @include desktop {
+    padding: 0 40px;
+  }
+
+  &  > .mat-card {
+    padding: 40px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+  }
+}
+
+.mat-sidenav > .mat-card {
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+}

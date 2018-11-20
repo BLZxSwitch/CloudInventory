@@ -1,0 +1,53 @@
+@import "material";
+
+.mat-list-item {
+  line-height: 2em;
+  text-decoration: none;
+
+  ::ng-deep .mat-list-item-content {
+    padding-left: 25px;
+    padding-top: 4px;
+
+    ::ng-deep .item-content {
+      opacity: 0.8;
+      color: $primary300;
+      vertical-align: middle;
+      display: inline-flex;
+
+      .mat-icon {
+        padding-right: 16px;
+      }
+    }
+  }
+
+  &:hover {
+    ::ng-deep .mat-list-item-content {
+      background-color: $menu-item-hover;
+
+      ::ng-deep .item-content {
+        opacity: 0.7;
+        color: #000000;
+      }
+    }
+  }
+}
+
+.mat-list-item.active-link {
+
+  ::ng-deep .mat-list-item-content {
+    background-color: $accent500;
+
+    ::ng-deep .item-content {
+      opacity: 0.7;
+      color: #000000;
+    }
+  }
+  &:hover {
+    ::ng-deep .mat-list-item-content {
+      background-color: $accent500;
+      ::ng-deep .item-content {
+        opacity: 0.6;
+      }
+    }
+  }
+}

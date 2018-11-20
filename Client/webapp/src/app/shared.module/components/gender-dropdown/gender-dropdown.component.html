@@ -1,0 +1,11 @@
+<mat-form-field>
+  <mat-select [placeholder]="placeholder"
+              [formControl]="control">
+    <mat-option *ngFor="let options of genderOptions; trackBy: trackByFn" [value]="options.value">
+      {{options.name | translate}}
+    </mat-option>
+  </mat-select>
+  <mat-error>
+    {{control?.errors | prInputFeedback }}
+  </mat-error>
+</mat-form-field>

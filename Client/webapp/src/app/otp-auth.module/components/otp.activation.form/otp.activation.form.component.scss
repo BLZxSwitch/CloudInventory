@@ -1,0 +1,21 @@
+@import "media";
+
+.mat-dialog-content {
+  margin: unset;
+  padding: unset;
+  display: grid;
+  justify-content: start;
+}
+
+.buttons {
+  text-align: right;
+  button {
+    margin-left: 8px;
+  }
+}
+
+@include mobile {
+  ::ng-deep .mat-step {
+    max-width: 340px;
+  }
+}

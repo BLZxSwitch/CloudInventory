@@ -1,0 +1,30 @@
+@import "media";
+
+:host /deep/ {
+  margin-top: -5px;
+  margin-bottom: -15px;
+  display: block;
+}
+
+.mat-button, .mat-raised-button {
+  @include mobile {
+    margin-bottom: 10px;
+    width: 100%;
+    margin-left: 0 !important;
+  }
+}
+
+mat-dialog-actions {
+  padding-bottom: 0;
+}
+
+.image-wrapper > img {
+  max-height: 65vh;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+
+  @include mobile {
+    max-height: 45vh;
+  }
+}

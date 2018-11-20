@@ -1,0 +1,18 @@
+<mat-card class="mat-typography">
+  <div class="page-header">
+    {{ "DASHBOARD." + translationKey + ".TITLE" | translate }}
+  </div>
+
+  <mat-card-content>
+    {{ "DASHBOARD." + translationKey + ".BODY" | translate }}
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button type="button"
+            mat-raised-button
+            [routerLink]="url"
+            color="accent">
+      {{ "DASHBOARD." + translationKey + ".BUTTON_TEXT" | translate }}
+    </button>
+  </mat-card-actions>
+</mat-card>

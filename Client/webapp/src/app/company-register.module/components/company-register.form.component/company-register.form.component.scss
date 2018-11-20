@@ -1,0 +1,44 @@
+@import "mixins";
+
+:host {
+  @include content-page;
+  ::ng-deep .mat-vertical-content {
+    padding-bottom: 0;
+  }
+}
+
+pr-date-selector {
+  width: 100%;
+}
+
+pr-captcha {
+  margin-top: 10px;
+  display: block;
+}
+
+.back-button {
+  margin: 10px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  flex-wrap: wrap;
+
+  & > * {
+    margin: 10px 0;
+  }
+}
+
+::ng-deep {
+  .mat-vertical-content {
+    padding: 0;
+  }
+}
+
+.already-have {
+  width: 100%;
+  text-align: center;
+  margin-top: 45px;
+}

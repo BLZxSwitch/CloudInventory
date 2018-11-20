@@ -1,0 +1,36 @@
+@import "material-custom";
+@import "media";
+@import "utils";
+@import "snackbar-component";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-header, [mat-dialog-title] {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
+}
+
+.mat-raised-button {
+  &.narrow-page-button {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+.content-card.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5), 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+

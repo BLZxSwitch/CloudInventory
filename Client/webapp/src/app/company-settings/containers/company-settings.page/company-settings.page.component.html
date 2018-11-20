@@ -1,0 +1,12 @@
+<pr-sidenav-layout-container>
+  <pr-card>
+    <mat-card-title>
+      {{ "COMPANY_SETTINGS.TITLE" | translate }}
+    </mat-card-title>
+
+    <mat-card-content>
+      <pr-company-settings-form [companySettings]="tenantSettings$|async"
+                                (submitForm)="onSubmit($event)"></pr-company-settings-form>
+    </mat-card-content>
+  </pr-card>
+</pr-sidenav-layout-container>

@@ -1,0 +1,43 @@
+@import "material.theme";
+
+:host {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 25px;
+  text-orientation: mixed;
+  text-align: center;
+  cursor: default;
+  /*
+  patch for Edge and iOS
+  */
+  @supports (not(-ms-ime-align: auto)) and (not(-webkit-overflow-scrolling: touch)) {
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+  }
+}
+
+.text-wrapper {
+  height: 100%;
+  text-align: center;
+  color: unset;
+
+  &.approved {
+    background-color: $accent500;
+  }
+
+  &.declined {
+    background-color: mat-color($cloudinventory-app-primary, 100);
+  }
+
+  /*
+  patch for Edge and iOS
+  */
+  @supports (-ms-ime-align: auto) or (-webkit-overflow-scrolling: touch) {
+    &.approved, &.declined {
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import "material";
+
+.snackbar-component-action {
+  font: {
+    family: mat-font-family($custom-typography, button);
+    size: mat-font-size($custom-typography, button);
+    weight: mat-font-weight($custom-typography, button);
+  }
+}
+
+.snackbar-component {
+  font: {
+    family: mat-font-family($custom-typography, body-1);
+    size: mat-font-size($custom-typography, body-1);
+  }
+}

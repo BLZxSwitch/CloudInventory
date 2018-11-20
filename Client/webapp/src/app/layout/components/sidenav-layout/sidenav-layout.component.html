@@ -1,0 +1,29 @@
+<pr-basic-layout>
+  <pr-toolbar [showHamburger]="true"
+              (hamburgerClick)="onHamburgerClick()"
+              [minimized]="scrolled$|async"
+              [sidenavIsVisible]="showSidenav"
+              [mobile]="mobile">
+  </pr-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav [mode]="mobile ? 'over' : 'side'"
+                 [opened]="showSidenav"
+                 (closedStart)="onSidenavClose()">
+      <mat-card class="sidenav" #sidenav>
+        <pr-nav-menu-container class="menu-container"></pr-nav-menu-container>
+      </mat-card>
+    </mat-sidenav>
+
+    <div class="page">
+      <div class="content">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </mat-sidenav-container>
+  <pr-loading-indicator [isVisible]="loadingIndicatorIsVisible$|async"
+                        [sidenavIsVisible]="showSidenav"
+                        [mobile]="mobile">
+  </pr-loading-indicator>
+
+</pr-basic-layout>

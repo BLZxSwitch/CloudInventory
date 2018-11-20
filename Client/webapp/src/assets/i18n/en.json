@@ -1,0 +1,313 @@
+﻿{
+  "LANG": "en",
+  "HTTP_ERRORS": {
+    "OFFLINE_ERROR": "You're offline. The operation could not be completed. Please check your connection and try again.",
+    "INTERNAL_SERVER_ERROR": "The server throws internal error (500)",
+    "UNSPECIFIED_BAD_REQUEST": "The server couldn't process the request"
+  },
+  "AUTH": {
+    "LOGIN": {
+      "HEADER": "Login",
+      "REGISTER_TEXT": "Register company",
+      "FORGOT_PASSWORD": "Reset password",
+      "REMEMBER_ME": "Remember me",
+      "BUTTON_TEXT": "Login",
+      "SEPARATOR_TEXT": "Or login from",
+      "EMAIL": "Email",
+      "PASSWORD": "Password"
+    },
+    "FORGOT_PASSWORD": {
+      "HEADER": "Forgot password?",
+      "BUTTON_TEXT": "Reset password",
+      "LOGIN_BUTTON_TEXT": "Go to login page",
+      "EMAIL": "Email",
+      "MOTIVATION": "Tell your Email Address and we will send you an email with a link",
+      "ALREADY_HAVE_TEXT": "Do you already have an account?",
+      "ALREADY_HAVE_LINK_TEXT": "Log in",
+      "SUCCESS_MESSAGE": "Email with instructions has been sent to your email address",
+      "SUCCESS_HEADER": "Success!"
+    },
+    "RESET_PASSWORD": {
+      "HEADER": "Reset password",
+      "MOTIVATION": "Please set a new password",
+      "BUTTON_TEXT": "Reset password",
+      "PASSWORD": "Password",
+      "CONFIRM_PASSWORD": "Confirm Password",
+      "SUCCESS_MESSAGE": "Your password has been successfully changed"
+    },
+    "SET_PASSWORD": {
+      "HEADER": "Set password",
+      "MOTIVATION": "Please set a password for your account",
+      "BUTTON_TEXT": "Set password",
+      "PASSWORD": "Password",
+      "ACCEPT_TOS": "I accept Terms of Service",
+      "CONFIRM_PASSWORD": "Confirm Password",
+      "SUCCESS_MESSAGE": "Your password has been successfully set"
+    },
+    "OTP": {
+      "TITLE": "Authenticator code",
+      "MOTIVATION": "Please input your authenticator code",
+      "OTP_CODE": "Code",
+      "BUTTON_TEXT": "Log in"
+    }
+  },
+  "STAFF": {
+    "FILTER": "Filter",
+    "EMPLOYEES_LIST": {
+      "HEADER": "Editing staff",
+      "ADD": "Add new employee",
+      "MORE": "MORE",
+      "LESS": "LESS",
+      "ADDED_SUCCESSFULLY": "Employee has been added successfully",
+      "SAVED_SUCCESSFULLY": "Employee has been saved successfully",
+      "INVITED_CONFIRM": "Do you want to invite {{employeeFullName}}?",
+      "INVITED_SUCCESSFULLY": "Employee has been invited successfully",
+      "ADDED_AND_INVITED_SUCCESSFULLY": "Employee has been added and invited successfully",
+      "DELETED_SUCCESSFULLY": "Employee has been deleted successfully",
+      "UPLOAD": "Upload employee list",
+      "CONFIRM_DELETE": "Are you sure you want to delete employee?",
+      "INVITE": "Invite"
+    },
+    "EMPLOYEE_INFO_FORM": {
+      "HEADER": {
+        "EDIT": "Edit",
+        "ADD": "Add"
+      },
+      "SUBMIT_BUTTON": {
+        "EDIT": "SAVE",
+        "ADD": "ADD",
+        "SAVE_AND_INVITE": "SAVE & INVITE",
+        "SAVE_ONLY": "SAVE ONLY"
+      },
+      "CANCEL": "CANCEL",
+      "SEND_INVITATION": "Send invitation",
+      "GENDER": "Gender",
+      "DOB": "Date of Birth",
+      "FIRST_NAME": "First name",
+      "NUMBER": "Personal number",
+      "LAST_NAME": "Last name",
+      "MOBILE_NUMBER": "Mobile number",
+      "EMAIL": "Email",
+      "ADDRESS": "Address",
+      "ZIP": "Zip code",
+      "CITY": "City",
+      "AHV_NUMBER": "AHV Number",
+      "FULL_NAME": "Full name",
+      "NATIONALITY": "Nationality",
+      "HOMETOWN": "Hometown",
+      "NOTES": "Notes",
+      "IS_ADMIN": "Administrator",
+      "INFO_MESSAGE": "In order to enable the account CloudInventory will send an invitation email to the employee. You can also send this mail later.",
+      "INVITED": "Invited",
+      "NOT_INVITED": "Not invited",
+      "IS_ACTIVE": "Active",
+      "IS_DISABLED": "Disabled"
+    }
+  },
+  "FORM": {
+    "HEADER": {
+      "EDIT": "Edit",
+      "ADD": "Add",
+      "APPROVE": "Approve"
+    },
+    "SUBMIT_BUTTON": {
+      "EDIT": "SAVE",
+      "ADD": "ADD",
+      "APPROVE": "SAVE"
+    },
+    "ERROR": {
+      "REQUIRED": "Please fill in this field",
+      "EMAIL": "This e-mail is invalid",
+      "EMAIL-IS-TAKEN": "This e-mail is already taken",
+      "COMPANY_NAME-IS-TAKEN": "This company name is already taken",
+      "CONFIRM_PASSWORD": "The passwords are not identical",
+      "MIN": "Min value is {{min}}",
+      "MAX": "Max value is {{max}}",
+      "MIN_LENGTH": "Min length is {{minLength}}",
+      "MAX_LENGTH": "MAX length is {{maxLength}}"
+    },
+    "API_ERROR": {
+      "LOGIN_FAILED": "Login failed",
+      "USER_NOT_FOUND": "User was not found",
+      "TOKEN_IS_INVALID": "Token is invalid",
+      "UNKNOWN_ERROR": "Unknown error occurred",
+      "USER_INACTIVE": "Your account is not active",
+      "OTP_CODE_IS_INVALID": "Code is not valid",
+      "PASSWORD_IS_INVALID": "Password is not valid",
+      "INVALID_REQUEST": "Invalid request"
+    }
+  },
+  "TERMS_OF_SERVICE": {
+    "HEADER": "Terms of Service",
+    "SUBHEADER": "Please read and accept our updated terms of service.",
+    "ACCEPT": "Accept",
+    "DECLINE": "Decline",
+    "FULL_PAGE_LINK": "Open terms of service in a new page"
+  },
+  "COMPANY_REGISTER": {
+    "TITLE": "Register the company",
+    "SUBMIT_FORM": "Register",
+    "FORM": {
+      "COMPANY_NAME": "Company Name",
+      "COMPANY_PHONE": "Company Phone",
+      "CITY": "City",
+      "ADDRESS": "Address",
+      "ZIP": "Zip",
+      "FIRST_NAME": "First Name",
+      "LAST_NAME": "Last Name",
+      "EMAIL": "Email",
+      "GENDER": "Gender",
+      "DOB": "Date of Birth",
+      "PASSWORD": "Password",
+      "CONFIRM_PASSWORD": "Confirm Password",
+      "FIRST_STEP_TITLE": "Company info",
+      "SECOND_STEP_TITLE": "Personal info",
+      "THIRD_STEP_TITLE": "Terms of Service",
+      "ACCEPT_TERMS": "Accept the Terms of Service",
+      "NEXT_STEP": "Next",
+      "BACK": "Back"
+    }
+  },
+  "COMMON": {
+    "APPROVED": "Approved",
+    "DECLINED": "Declined",
+    "EMPLOYEE": "Employee",
+    "FILE_INPUT": {
+      "CHOOSE_FILE": "Choose a file",
+      "DRAG_IT": "or drag it here"
+    },
+    "FILTER": {
+      "ALL": "ALL",
+      "EMPLOYEE": "Employee",
+      "MONTH": "Month",
+      "YEAR": "Year"
+    },
+    "YES": "Yes",
+    "NO": "No",
+    "GENDER": {
+      "MALE": "Male",
+      "FEMALE": "Female"
+    },
+    "LANGUAGE": {
+      "DE": "German",
+      "EN": "English"
+    },
+    "MONTHS": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December"
+    },
+    "BUTTONS": {
+      "MORE": "MORE",
+      "LESS": "LESS",
+      "EDIT": "EDIT",
+      "DELETE": "DELETE",
+      "CANCEL": "CANCEL"
+    },
+    "SAVE_OPERATION": {
+      "SUCCESS": "The item has been saved successfully"
+    },
+    "DELETE_OPERATION": {
+      "CONFIRM_DELETE": "Are you sure you want to delete this item?",
+      "SUCCESS": "The item has been deleted successfully",
+      "FAILED": "This item couldn't be deleted"
+    }
+  },
+  "DASHBOARD": {
+    "STAFF": {
+      "TITLE": "Staff",
+      "BODY": "Company staff",
+      "BUTTON_TEXT": "Add employee"
+    }
+  },
+  "NAV_MENU": {
+    "LOGOUT": "Logout",
+    "HEADER": {
+      "HOME": "Home",
+      "MANAGEMENT": "Management",
+      "MASTER_DATA": "Master data",
+      "SUMMARIES": "Summaries",
+      "SETTINGS": "Settings"
+    },
+    "LINK": {
+      "DASHBOARD": "Dashboard",
+      "STAFF": "Staff",
+      "MY_SETTINGS": "User settings",
+      "COMPANY_SETTINGS": "Company settings"
+    }
+  },
+  "MY_SETTINGS": {
+    "TITLE": "User settings",
+    "SAVED_SUCCESSFULLY": "Settings have been updated successfully",
+    "INVALID_USER_PICTURE_MESSAGE": "User picture must be at least 100x100",
+    "USER_PICTURE_UPDATED_SUCCESSFULLY": "User picture has been updated successfully",
+    "USER_PICTURE_DELETED_SUCCESSFULLY": "User picture has been deleted successfully",
+    "USER_PICTURE_CROPPER": {
+      "HEADER": "Crop your new profile picture",
+      "SUBMIT": "Set new profile picture"
+    },
+    "FORM": {
+      "LANGUAGE": "Language",
+      "USER_PICTURE": "User Picture",
+      "EMAIL": "Email",
+      "PUSH": "Push"
+    },
+    "OTP": {
+      "TITLE": "Enable two factor authentication",
+      "ENABLED": "Two factor authentication is Enabled",
+      "DISABLED": "Two factor authentication is Disabled",
+      "ENABLE": "Activate ...",
+      "DISABLE": "Disable ..."
+    }
+  },
+  "OTP": {
+    "ENABLE_FORM": {
+      "TITLE": "2FA activation",
+      "FIRST_STEP_TITLE": "2FA applications",
+      "SECOND_STEP_TITLE": "Activation code",
+      "THIRD_STEP_TITLE": "2FA validation",
+      "NEXT_STEP": "Next",
+      "BACK": "Back",
+      "ACTIVATE": "Activate",
+      "SUCCESS_ACTIVATION": "2FA activated successfully"
+    },
+    "INSTALLER": {
+      "DESCRIPTION": "Install Google Authenticator to your device",
+      "ANDROID_LINK": "LINK FOR ANDROID",
+      "IOS_LINK": "LINK FOR iOS",
+      "MANUAL": "Google Authenticator manual"
+    },
+    "GENERATOR": {
+      "SECRET_KEY": "24-Digit Key:",
+      "SECRET_KEY_WARNING": "Before turning on 2FA, write down or print a copy of your 24-digit key and put it in a safe place. If your phone gets lost, stolen, or erased, you will need this key to get back into your account!",
+      "DONE": "I have backed up my 24-digit key."
+    },
+    "VALIDATOR": {
+      "OTP_CODE": "Code",
+      "PASSWORD": "Password"
+    },
+    "DISABLE_FORM": {
+      "TITLE": "2FA deactivation",
+      "SUCCESS_DEACTIVATION": "2FA deactivated successfully",
+      "DEACTIVATE": "Deactivate"
+    }
+  },
+  "COMPANY_SETTINGS": {
+    "TITLE": "Company settings",
+    "SAVED_SUCCESSFULLY": "Company settings have been updated successfully"
+  },
+  "UPDATE_APP": {
+    "NOTIFICATION": "A newer version of the CloudInventory is available",
+    "RELOAD": "RELOAD",
+    "LATER": "LATER"
+  }
+}

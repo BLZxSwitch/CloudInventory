@@ -1,0 +1,111 @@
+<mat-card class="mat-typography content-card">
+
+  <mat-card-title>
+    {{ "COMPANY_REGISTER.TITLE" | translate }}
+  </mat-card-title>
+
+  <mat-card-content>
+
+    <mat-vertical-stepper [linear]="true">
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup" prScrollIntoViewOnInvalid>
+          <ng-template matStepLabel>{{'COMPANY_REGISTER.FORM.FIRST_STEP_TITLE' | translate}}</ng-template>
+
+          <pr-input type="text" placeholder="{{'COMPANY_REGISTER.FORM.COMPANY_NAME' | translate}}"
+                    formControlName="companyName"></pr-input>
+          <pr-input type="text" placeholder="{{'COMPANY_REGISTER.FORM.COMPANY_PHONE' | translate}}"
+                    formControlName="companyPhone"></pr-input>
+          <pr-input type="text" placeholder="{{'COMPANY_REGISTER.FORM.ADDRESS' | translate}}"
+                    formControlName="addressLine"></pr-input>
+          <pr-input type="text" placeholder="{{'COMPANY_REGISTER.FORM.ZIP' | translate}}"
+                    formControlName="zip"></pr-input>
+          <pr-input type="text" placeholder="{{'COMPANY_REGISTER.FORM.CITY' | translate}}"
+                    formControlName="city"></pr-input>
+
+          <div class="buttons">
+            <button matStepperNext
+                    mat-raised-button
+                    color="accent"
+                    (click)="showErrorsForFirstStep()">
+              {{'COMPANY_REGISTER.FORM.NEXT_STEP' | translate}}
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup" prScrollIntoViewOnInvalid>
+          <ng-template matStepLabel>{{'COMPANY_REGISTER.FORM.SECOND_STEP_TITLE' | translate}}</ng-template>
+
+          <pr-gender-dropdown [placeholder]="'COMPANY_REGISTER.FORM.GENDER' | translate"
+                              formControlName="gender"></pr-gender-dropdown>
+
+          <pr-input type="text" placeholder="{{'COMPANY_REGISTER.FORM.FIRST_NAME' | translate}}"
+                    formControlName="firstName"></pr-input>
+          <pr-input type="text" placeholder="{{'COMPANY_REGISTER.FORM.LAST_NAME' | translate}}"
+                    formControlName="lastName"></pr-input>
+          <pr-date-selector formControlName="dateOfBirth"
+                            [max]="maxDateOfBirth"
+                            [placeholder]="'COMPANY_REGISTER.FORM.DOB' | translate">
+          </pr-date-selector>
+          <pr-input type="email" placeholder="{{'COMPANY_REGISTER.FORM.EMAIL' | translate}}"
+                    formControlName="email"></pr-input>
+
+          <pr-input type="password" placeholder="{{'COMPANY_REGISTER.FORM.PASSWORD' | translate}}"
+                    formControlName="password"></pr-input>
+          <pr-input type="password" placeholder="{{'COMPANY_REGISTER.FORM.CONFIRM_PASSWORD' | translate}}"
+                    formControlName="confirmPassword"></pr-input>
+
+          <div class="buttons">
+            <button mat-raised-button matStepperPrevious class="back-button">{{'COMPANY_REGISTER.FORM.BACK' | translate}}</button>
+
+            <button matStepperNext
+                    mat-raised-button
+                    color="accent"
+                    (click)="showErrorsForSecondStep()">
+              {{'COMPANY_REGISTER.FORM.NEXT_STEP' | translate}}
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup" (ngSubmit)="submit()">
+          <ng-template matStepLabel>{{'COMPANY_REGISTER.FORM.THIRD_STEP_TITLE' | translate}}</ng-template>
+
+          <pr-terms-of-service [fullPage]="false"></pr-terms-of-service>
+
+          <mat-checkbox formControlName="toSAccepted"
+                        color="accent">
+            {{ "COMPANY_REGISTER.FORM.ACCEPT_TERMS" | translate }}
+          </mat-checkbox>
+
+          <pr-captcha [captchaGroup]="captchaGroup">
+          </pr-captcha>
+
+          <div class="buttons">
+            <button mat-raised-button matStepperPrevious class="back-button">{{'COMPANY_REGISTER.FORM.BACK' | translate}}</button>
+
+            <button type="submit"
+                    mat-raised-button
+                    [disabled]="thirdFormGroup.invalid"
+                    color="accent">
+              {{ "COMPANY_REGISTER.SUBMIT_FORM" | translate }}
+            </button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-vertical-stepper>
+
+    <mat-error *ngIf="errorMessage">
+      {{ errorMessage }}
+    </mat-error>
+  </mat-card-content>
+
+</mat-card>
+
+<div class="mat-typography already-have">
+  <span>{{ "AUTH.FORGOT_PASSWORD.ALREADY_HAVE_TEXT" | translate }}</span>
+
+  <a [routerLink]="authLoginUrl">
+    {{ "AUTH.FORGOT_PASSWORD.ALREADY_HAVE_LINK_TEXT" | translate }}
+  </a>
+</div>

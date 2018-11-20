@@ -1,0 +1,48 @@
+@import "media";
+@import "mixins";
+@import "variables";
+
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $backdrop-height-desktop;
+
+  @include mobile() {
+    height: $backdrop-height-mobile;
+  }
+
+  @include tablet() {
+    height: $backdrop-height-tablet;
+  }
+  overflow: hidden;
+
+  .backdrop {
+    height: 100%;
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+
+  &.collapsed {
+    height: 0;
+  }
+
+  &.transition-height {
+    @include layout-transition(height);
+  }
+
+  &.blur {
+    .backdrop {
+      filter: blur(8px);
+    }
+  }
+
+  &.transition-filter {
+    .backdrop {
+      @include layout-transition(filter);
+    }
+  }
+}

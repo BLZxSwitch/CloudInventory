@@ -1,0 +1,8 @@
+<div class="overlay" [ngClass]="{'is-visible':isVisible}">
+  <div class="loading-indicator">
+    <div class="img"
+        [class.shift]="!mobile&&sidenavIsVisible"
+        [class.transition]="transition">
+    </div>
+  </div>
+</div>

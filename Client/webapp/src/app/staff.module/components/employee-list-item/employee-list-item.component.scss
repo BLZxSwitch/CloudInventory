@@ -1,0 +1,97 @@
+@import "media";
+@import "../../../../scss/app";
+
+:host {
+  display: block;
+  margin: 8px 0;
+}
+
+@mixin flex($basis) {
+  flex-basis: $basis;
+  min-width: $basis;
+}
+
+.show-more-button {
+  margin-left: -17px;
+}
+
+/deep/ .controls {
+  display: flex;
+  overflow: hidden;
+  flex-wrap: nowrap;
+
+  &.show-more {
+    overflow: visible;
+    flex-wrap: wrap;
+  }
+
+  & > * {
+    flex: 1;
+    @include flex(100%);
+
+    @include desktop {
+      @include flex(25%);
+    }
+  }
+
+  .number {
+    @include flex(25%);
+    @include desktop {
+      @include flex(25%);
+    }
+  }
+  .gender {
+    @include flex(25%);
+    @include desktop {
+      @include flex(20%);
+    }
+  }
+  .full-name {
+    @include tablet-and-mobile {
+      @include flex(50%);
+    }
+    @include desktop {
+      @include flex(30%);
+    }
+  }
+  .email {
+    @include desktop {
+      @include flex(45%);
+    }
+  }
+  .ahv {
+    @include desktop {
+      @include flex(30%);
+    }
+  }
+  .nationality {
+    @include desktop {
+      @include flex(20%);
+    }
+  }
+  .address {
+    @include desktop {
+      @include flex(55%);
+    }
+  }
+  .notes {
+    @include desktop {
+      @include flex(100%);
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mat-card {
+  @extend .content-card;
+
+  padding-left: 36px;
+
+  @include mobile {
+    padding-left: 30px;
+  }
+}

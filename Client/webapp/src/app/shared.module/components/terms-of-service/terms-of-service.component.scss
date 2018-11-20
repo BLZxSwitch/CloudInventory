@@ -1,0 +1,88 @@
+@import "material";
+@import "media";
+
+:host {
+  display: block;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.link {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  display: block;
+}
+
+/deep/ .text-content {
+  counter-reset: heading;
+  overflow: auto;
+
+  &.not-full-page {
+    max-height: 400px;
+
+    &.in-dialog {
+      max-height: 58vh;
+
+      @include mobile {
+        max-height: 36vh;
+      }
+    }
+  }
+
+  h1 {
+    font-weight: normal;
+    font-size: 28px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid $accent500;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    margin-top: 30px;
+
+    counter-reset: subheading;
+
+    &:before {
+      content: counter(heading) " ";
+      counter-increment: heading;
+    }
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    &:before {
+      content: counter(heading) "." counter(subheading) " ";
+      counter-increment: subheading;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: #0000EE;
+
+    &:link {
+      color: #0000EE;
+    }
+    &:active {
+      color: #551A8B;
+    }
+    &:hover {
+      color: #551A8B;
+    }
+    :visited {
+      color: #551A8B;
+    }
+  }
+}

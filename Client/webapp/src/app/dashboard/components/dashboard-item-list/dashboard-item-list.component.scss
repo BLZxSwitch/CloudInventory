@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8px;
+
+  & > * {
+    display: none;
+
+    &:nth-child(1) {
+      display: block;
+    }
+    &:nth-child(2) {
+      display: block;
+    }
+    &:nth-child(3) {
+      display: block;
+    }
+  }
+}

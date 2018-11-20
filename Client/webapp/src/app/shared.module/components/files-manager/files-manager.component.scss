@@ -1,0 +1,22 @@
+.files {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+
+  &.vertical {
+    flex-direction: column;
+  }
+}
+
+.file {
+  display: flex;
+
+  .mat-button {
+    align-self: center;
+  }
+}
+
+:host {
+  padding-bottom: 10px;
+  display: block;
+}

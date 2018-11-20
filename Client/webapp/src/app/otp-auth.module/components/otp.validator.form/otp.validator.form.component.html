@@ -1,0 +1,17 @@
+<div [formGroup]="formGroup" class="mat-typography">
+  <input class="hidden">
+  <input class="hidden" type="password">
+
+  <pr-input type="password" id="password" name="password"
+            autoComplete="section-otp password"
+            placeholder="{{'OTP.VALIDATOR.PASSWORD' | translate}}"
+            formControlName="password"></pr-input>
+
+  <pr-input id="otp-code" name="otp-code"
+            type="text"
+            pattern="[0-9]*"
+            [mask]="{mask: mask}"
+            autoComplete="section-otp code"
+            placeholder="{{'OTP.VALIDATOR.OTP_CODE' | translate}}"
+            formControlName="otp"></pr-input>
+</div>

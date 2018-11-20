@@ -1,0 +1,30 @@
+<pr-narrow-page [header]="'AUTH.OTP.TITLE' | translate">
+
+  <form [formGroup]="form"
+        (ngSubmit)="onSubmit()">
+
+    <p class="motivation">
+      {{ "AUTH.OTP.MOTIVATION" | translate }}
+    </p>
+
+    <pr-input type="number"
+              [placeholder]="'AUTH.OTP.TITLE' | translate"
+              formControlName="otpCode"></pr-input>
+
+    <mat-error *ngIf="errorMessage">
+      {{ errorMessage }}
+    </mat-error>
+
+    <pr-captcha [captchaGroup]="captchaGroup">
+    </pr-captcha>
+
+    <button type="submit"
+            mat-raised-button
+            class="narrow-page-button"
+            [disabled]="form.controls['otpCode'].invalid"
+            color="accent">
+      {{ "AUTH.OTP.BUTTON_TEXT" | translate }}
+    </button>
+
+  </form>
+</pr-narrow-page>

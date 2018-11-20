@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  width: min-content;
+}
+
+.mat-calendar-period-button {
+  pointer-events: none;
+}
+
+.mat-calendar-arrow {
+  display: none;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.no-spinners {
+  -moz-appearance:textfield;
+}
+
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

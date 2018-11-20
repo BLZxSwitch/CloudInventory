@@ -1,0 +1,11 @@
+<mat-form-field>
+  <mat-select [placeholder]="placeholder"
+              [formControl]="control">
+    <mat-option *ngFor="let option of months; trackBy: trackByFn" [value]="option.value">
+      {{option.name | translate}}
+    </mat-option>
+  </mat-select>
+  <mat-error>
+    {{control?.errors | prInputFeedback }}
+  </mat-error>
+</mat-form-field>

@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+@import "../../../../scss/material.theme";
+
+$foreground: map-get($cloudinventory-app-theme, foreground);
+$is-dark-theme: map-get($cloudinventory-app-theme, is-dark);
+$label-color: mat-color($foreground, secondary-text, if($is-dark-theme, 0.7, 0.6));
+
+:host { display:block; }
+
+.mat-form-field {
+  width: 100%;
+
+  &.mat-focused {
+    mat-label {
+      color: $label-color;
+    }
+  }
+}

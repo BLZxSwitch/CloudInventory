@@ -1,0 +1,19 @@
+@import "media";
+@import "material";
+
+:host {
+  padding: 10px;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+}
+
+.mat-checkbox {
+  pointer-events: none;
+}
+
+.label {
+  white-space: nowrap;
+  color: mat-color($cloudinventory-app-primary, A100);
+}
+

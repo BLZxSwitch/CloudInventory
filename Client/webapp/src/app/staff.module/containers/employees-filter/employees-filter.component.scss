@@ -1,0 +1,7 @@
+@import "mixins";
+
+@include filter-layout;
+
+pr-input {
+  width: 100%;
+}

@@ -1,0 +1,7 @@
+<pr-unauthorized-layout>
+  <pr-company-register-form
+    (submitted)="onSubmit($event)"
+    [pending]="pending$ | async"
+    [errorMessage]="error$ | prDescribe | async">
+  </pr-company-register-form>
+</pr-unauthorized-layout>

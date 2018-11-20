@@ -1,0 +1,21 @@
+<div class="mat-typography">
+  <div class="page-header">
+    {{ "MY_SETTINGS.USER_PICTURE_CROPPER.HEADER" | translate }}
+  </div>
+
+  <div class="image-wrapper">
+    <img #img [src]="src"/>
+  </div>
+
+  <mat-dialog-actions>
+    <button mat-raised-button
+            (click)="onDone()"
+            color="accent">
+      {{ "MY_SETTINGS.USER_PICTURE_CROPPER.SUBMIT" | translate }}
+    </button>
+    <button mat-raised-button
+            (click)="onCancel()">
+      {{"COMMON.BUTTONS.CANCEL" | translate}}
+    </button>
+  </mat-dialog-actions>
+</div>
