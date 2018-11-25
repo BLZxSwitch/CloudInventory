@@ -24,6 +24,7 @@ namespace Api.Components.CompanyRegister
                 Address = request.Address,
                 City = request.City,
                 Zip = request.Zip,
+                INN = request.Inn,
             };
 
             var tenant = new Tenant

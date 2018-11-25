@@ -32,6 +32,7 @@ export class CompanyRegisterFormProvider {
       address: [""],
       zip: [""],
       city: [""],
+      inn: [""]
     };
 
     const password = new FormControl("", Validators.required);

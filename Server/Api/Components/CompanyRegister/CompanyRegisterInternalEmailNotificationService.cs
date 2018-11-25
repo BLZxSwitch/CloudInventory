@@ -27,6 +27,7 @@ namespace Api.Components.CompanyRegister
             var subject = "Зарегистрирована новая компания в CloudInventory";
             var content = $@"Компания { company.Name} была зарегистрирована в CloudInventory. Контактная информация:<br/>
                             {user.Email}<br/>
+                            {company.INN}<br/>
                             {company.Phone}<br/>
                             {company.Address}<br/>
                             {company.Zip} {company.City}";

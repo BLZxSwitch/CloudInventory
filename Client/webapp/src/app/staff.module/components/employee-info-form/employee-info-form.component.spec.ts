@@ -10,9 +10,6 @@ import { EmployeeInfoFormComponent } from "./employee-info-form.component";
 
 describe("EmployeeInfoFormComponent", () => {
 
-  const validAHV = "756.9217.0769.85";
-  const invalidAHV = "756.9217.0769.86";
-
   beforeEach(() => {
     createInjector(EmployeeInfoFormComponent, [{provide: FormBuilder, useClass: FormBuilder, deps: []}]);
   });
@@ -31,23 +28,14 @@ describe("EmployeeInfoFormComponent", () => {
       dateOfBirth: utc().valueOf(),
       firstName: "John",
       lastName: "Doe",
-      addressLine1: "addressLine",
+      patronymicName: "Fatherovich",
       phone: "mobile number format is not validated",
       email: "personal@email.com",
-      ahvNr: validAHV,
-      number: "1",
-      city: "city",
-      addressLine2: "",
-      fullName: "John Doe",
-      zip: "111",
-      hometown: "hometown",
-      nationality: "nationality",
-      notes: "notes",
+      fullName: "John Doe Fatherovich",
       isAdmin: false,
       isInvited: false,
       isActive: true,
       isInvitationAccepted: false,
-      organizationalUnitId: "organizationalUnitId",
     } as EmployeeDTO;
 
     component.employee = {...employee} as EmployeeDTO;
@@ -80,20 +68,13 @@ describe("EmployeeInfoFormComponent", () => {
 
     beforeEach(() => {
       employeeInfoForm = {
-        number: "number",
         gender: Gender.Male,
         dateOfBirth: utc().valueOf(),
         firstName: "John",
         lastName: "Doe",
-        addressLine: "addressLine",
-        city: "city",
-        zip: "zip",
+        patronymicName: "Fatherovich",
         phone: "mobile number format is not validated",
         email: "personal@email.com",
-        ahvNr: validAHV,
-        hometown: "hometown",
-        nationality: "nationality",
-        notes: "notes",
         isAdmin: false,
         isActive: true
       };
@@ -151,36 +132,6 @@ describe("EmployeeInfoFormComponent", () => {
       expect(component.form.valid).toBeFalsy();
     });
 
-    it("should be valid when city is undefined", () => {
-      const component = get<EmployeeInfoFormComponent>();
-
-      employeeInfoForm.city = undefined;
-
-      component.form.patchValue(employeeInfoForm);
-
-      expect(component.form.valid).toBeTruthy();
-    });
-
-    it("should be valid when zip is undefined", () => {
-      const component = get<EmployeeInfoFormComponent>();
-
-      employeeInfoForm.zip = undefined;
-
-      component.form.patchValue(employeeInfoForm);
-
-      expect(component.form.valid).toBeTruthy();
-    });
-
-    it("should be valid when addressLine is undefined", () => {
-      const component = get<EmployeeInfoFormComponent>();
-
-      employeeInfoForm.addressLine = undefined;
-
-      component.form.patchValue(employeeInfoForm);
-
-      expect(component.form.valid).toBeTruthy();
-    });
-
     it("should be valid when phone is undefined", () => {
       const component = get<EmployeeInfoFormComponent>();
 
@@ -222,56 +173,6 @@ describe("EmployeeInfoFormComponent", () => {
       component.form.patchValue(employeeInfoForm);
 
       expect(component.form.valid).toBeFalsy();
-    });
-
-    it("should be invalid when ahvNr is undefined", () => {
-      const component = get<EmployeeInfoFormComponent>();
-
-      employeeInfoForm.ahvNr = undefined;
-
-      component.form.patchValue(employeeInfoForm);
-
-      expect(component.form.valid).toBeFalsy();
-    });
-
-    it("should be invalid when ahvNr is set but invalid", () => {
-      const component = get<EmployeeInfoFormComponent>();
-
-      employeeInfoForm.ahvNr = invalidAHV;
-
-      component.form.patchValue(employeeInfoForm);
-
-      expect(component.form.valid).toBeFalsy();
-    });
-
-    it("should be invalid when number is undefined", () => {
-      const component = get<EmployeeInfoFormComponent>();
-
-      employeeInfoForm.number = undefined;
-
-      component.form.patchValue(employeeInfoForm);
-
-      expect(component.form.valid).toBeFalsy();
-    });
-
-    it("should be valid when nationality is undefined", () => {
-      const component = get<EmployeeInfoFormComponent>();
-
-      employeeInfoForm.nationality = undefined;
-
-      component.form.patchValue(employeeInfoForm);
-
-      expect(component.form.valid).toBeTruthy();
-    });
-
-    it("should be valid when hometown is undefined", () => {
-      const component = get<EmployeeInfoFormComponent>();
-
-      employeeInfoForm.hometown = undefined;
-
-      component.form.patchValue(employeeInfoForm);
-
-      expect(component.form.valid).toBeTruthy();
     });
   });
 });

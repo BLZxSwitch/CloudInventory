@@ -14,20 +14,12 @@
         </pr-date-selector>
       </div>
 
-      <pr-input type="number"
-                formControlName="number"
-                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.NUMBER' | translate"></pr-input>
       <pr-input formControlName="firstName"
                 [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.FIRST_NAME' | translate"></pr-input>
       <pr-input formControlName="lastName"
                 [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.LAST_NAME' | translate"></pr-input>
-      <pr-input formControlName="addressLine"
-                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.ADDRESS' | translate"></pr-input>
-      <pr-input formControlName="city"
-                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.CITY' | translate"></pr-input>
-      <pr-input type="number"
-                formControlName="zip"
-                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.ZIP' | translate"></pr-input>
+      <pr-input formControlName="patronymicName"
+                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.PATRONYMIC_NAME' | translate"></pr-input>
       <pr-input type="tel"
                 formControlName="phone"
                 [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.MOBILE_NUMBER' | translate"></pr-input>
@@ -47,18 +39,6 @@
                 type="email"
                 formControlName="email"
                 [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.EMAIL' | translate"></pr-input>
-      <pr-input type="tel"
-                inputmode="numeric"
-                pattern="[0-9\.]*"
-                formControlName="ahvNr"
-                [mask]="{mask: ahvMask}"
-                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.AHV_NUMBER' | translate"></pr-input>
-      <pr-input formControlName="hometown"
-                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.HOMETOWN' | translate"></pr-input>
-      <pr-input formControlName="nationality"
-                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.NATIONALITY' | translate"></pr-input>
-      <pr-input formControlName="notes"
-                [placeholder]="'STAFF.EMPLOYEE_INFO_FORM.NOTES' | translate"></pr-input>
 
       <div class="half-width-controls-container">
 

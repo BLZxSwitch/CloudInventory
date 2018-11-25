@@ -7,6 +7,7 @@ export interface ICompanyRegisterFirstFormModel {
   address: string;
   zip: string;
   city: string;
+  inn: string;
 }
 export interface ICompanyRegisterSecondFormModel {
   gender: Gender;

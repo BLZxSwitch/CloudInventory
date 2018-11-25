@@ -10,6 +10,7 @@ namespace Api.Transports.CompanyRegister
         public string Address { get; set; }
         public string Zip { get; set; }
         public string City { get; set; }
+        public string Inn { get; set; }
 
         public Gender Gender { get; set; }
         public string Password { get; set; }

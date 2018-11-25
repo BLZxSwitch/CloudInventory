@@ -74,6 +74,7 @@ export class CompanyRegisterFormComponent {
         address: firstFormValue.address,
         city: firstFormValue.city,
         zip: firstFormValue.zip,
+        inn: firstFormValue.inn,
         firstName: secondFormValue.firstName,
         lastName: secondFormValue.lastName,
         patronymicName: secondFormValue.patronymicName,

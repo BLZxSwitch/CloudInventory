@@ -2101,6 +2101,7 @@ export class CompanyRegisterRequest implements ICompanyRegisterRequest {
     address: string | undefined;
     zip: string | undefined;
     city: string | undefined;
+    inn: string | undefined;
     gender: Gender;
     password: string | undefined;
     firstName: string | undefined;
@@ -2127,6 +2128,7 @@ export class CompanyRegisterRequest implements ICompanyRegisterRequest {
             this.address = data["address"];
             this.zip = data["zip"];
             this.city = data["city"];
+            this.inn = data["inn"];
             this.gender = data["gender"];
             this.password = data["password"];
             this.firstName = data["firstName"];
@@ -2153,6 +2155,7 @@ export class CompanyRegisterRequest implements ICompanyRegisterRequest {
         data["address"] = this.address;
         data["zip"] = this.zip;
         data["city"] = this.city;
+        data["inn"] = this.inn;
         data["gender"] = this.gender;
         data["password"] = this.password;
         data["firstName"] = this.firstName;
@@ -2172,6 +2175,7 @@ export interface ICompanyRegisterRequest {
     address: string | undefined;
     zip: string | undefined;
     city: string | undefined;
+    inn: string | undefined;
     gender: Gender;
     password: string | undefined;
     firstName: string | undefined;

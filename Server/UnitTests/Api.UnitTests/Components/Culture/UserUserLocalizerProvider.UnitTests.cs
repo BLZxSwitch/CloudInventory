@@ -27,9 +27,9 @@ namespace Api.UnitTests.Components.Culture
         {
             var user = new SecurityUser()
             {
-                CultureName = "de"
+                CultureName = "ru"
             };
-            var cultureInfo = CultureInfo.CreateSpecificCulture("de");
+            var cultureInfo = CultureInfo.CreateSpecificCulture("ru");
             var expected = _mock.Mock<IStringLocalizer>().Object;
 
             _mock.Mock<IStringLocalizer<TestResorce>>()
@@ -37,7 +37,7 @@ namespace Api.UnitTests.Components.Culture
                 .Returns(expected);
 
             _mock.Mock<ICultureInfoProvider>()
-                .Setup(context => context.Get("de"))
+                .Setup(context => context.Get("ru"))
                 .Returns(cultureInfo);
 
             var actual = _target.Get(user);
