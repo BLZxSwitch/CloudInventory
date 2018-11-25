@@ -156,12 +156,12 @@ namespace Api
             var supportedCultures = new[]
             {
                 new CultureInfo("en"),
-                new CultureInfo("de"),
+                new CultureInfo("ru"),
             };
             app.UseRequestLocalization(
                 new RequestLocalizationOptions
                 {
-                    DefaultRequestCulture = new RequestCulture("en"),
+                    DefaultRequestCulture = new RequestCulture("ru"),
                     SupportedCultures = supportedCultures,
                     SupportedUICultures = supportedCultures
                 }

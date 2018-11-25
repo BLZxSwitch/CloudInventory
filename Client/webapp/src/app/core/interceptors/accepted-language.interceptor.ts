@@ -16,7 +16,7 @@ export class AcceptedLanguageInterceptor implements HttpInterceptor {
   public intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     const clonedRequest = request.clone({
-      setHeaders: {"Accept-Language": "de"},
+      setHeaders: {"Accept-Language": "ru"},
     });
 
     return next.handle(clonedRequest);

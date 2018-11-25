@@ -1,3 +1,3 @@
 export function defaultCultureName() {
-  return "de";
+  return "ru";
 }

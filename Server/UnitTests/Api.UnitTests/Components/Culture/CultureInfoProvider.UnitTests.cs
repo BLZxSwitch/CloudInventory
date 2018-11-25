@@ -7,13 +7,13 @@ namespace Api.UnitTests.Components.Culture
     public class CultureInfoProviderUnitTests
     {
         [TestMethod]
-        public void ShouldReturn_De_CultureInfo()
+        public void ShouldReturn_Ru_CultureInfo()
         {
             var cultureInfoProvider = new CultureInfoProvider();
 
-            var actual = cultureInfoProvider.Get("de");
+            var actual = cultureInfoProvider.Get("ru");
 
-            Assert.AreEqual("de-DE", actual.Name);
+            Assert.AreEqual("ru-RU", actual.Name);
         }
 
         [TestMethod]
