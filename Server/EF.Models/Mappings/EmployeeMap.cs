@@ -24,6 +24,22 @@ namespace EF.Models.Mappings
             builder.HasOne(entity => entity.Tenant)
                 .WithMany()
                 .HasForeignKey(entity => entity.TenantId);
+            builder.HasMany(entity => entity.OrgUnits)
+                .WithOne(orgUnits => orgUnits.CurrentOrgUnitMOL)
+                .HasForeignKey(entity => entity.CurrentOrgUnitMOLId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired();
+            builder.HasMany(entity => entity.OrgUnitMOLs)
+                .WithOne(orgUnits => orgUnits.Employee)
+                .HasForeignKey(entity => entity.EmployeeId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired();
+            builder.HasMany(entity => entity.OrgUnits)
+                .WithOne(orgUnits => orgUnits.CurrentOrgUnitMOL)
+                .HasForeignKey(entity => entity.CurrentOrgUnitMOLId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired();
+
             builder.Property(entity => entity.FirstName).IsRequired();
             builder.Property(entity => entity.LastName).IsRequired();
             builder.ToTable("Employee", "md");

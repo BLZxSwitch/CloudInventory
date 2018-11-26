@@ -6,6 +6,6 @@ namespace Api.Transports.Common
 
         public string Language { get; set; }
 
-        public bool HasUserPicture { get; set; }
+        //public bool HasUserPicture { get; set; }
     }
 }

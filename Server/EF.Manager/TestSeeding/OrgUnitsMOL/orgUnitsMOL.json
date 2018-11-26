@@ -1,0 +1,14 @@
+﻿[
+  {
+    "Id": "{2c4b17ec-6fcf-4f6b-bcec-e0bb15e46dc0}",
+    "EmployeeId": "{acc6c11d-6e70-4508-b9e1-93f93da8e601}",
+    "OrgUnitId": "{18596c3e-2f24-4e95-8635-b273be67905c}",
+    "DateIn": "11/26/2018"
+  },
+  {
+    "Id": "{dd541f2b-d2c6-445c-9df5-1d69c39ed6bd}",
+    "EmployeeId": "{acc6c11d-6e70-4508-b9e1-93f93da8e601}",
+    "OrgUnitId": "{57436d0a-b9f6-4d1c-ad13-363ddd5a90c5}",
+    "DateIn": "11/26/2018"
+  }
+]

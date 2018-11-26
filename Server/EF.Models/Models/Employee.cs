@@ -23,5 +23,7 @@ namespace EF.Models.Models
         public virtual SecurityUser SecurityUser { get; set; }
         public virtual Company Company { get; set; }
         public virtual Tenant Tenant { get; set; }
+        public virtual List<OrgUnitMOL> OrgUnitMOLs { get; set; } = new List<OrgUnitMOL>();
+        public virtual List<OrgUnit> OrgUnits { get; set; } = new List<OrgUnit>();
     }
 }

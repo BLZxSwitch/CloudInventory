@@ -22,6 +22,8 @@ namespace EF.Models
         DbSet<IdentityUserToken<Guid>> UserTokens { get; set; }
         DbSet<Employee> Employees { get; set; }
         DbSet<SecurityUser> SecurityUsers { get; set; }
+        DbSet<OrgUnit> OrgUnit { get; set; }
+        DbSet<OrgUnitMOL> OrgUnitMOL { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default(CancellationToken));
