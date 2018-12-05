@@ -1051,6 +1051,276 @@ export class InvitationServiceProxy {
 }
 
 @Injectable()
+export class OrgUnitsServiceProxy {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        this.http = http;
+        this.baseUrl = baseUrl ? baseUrl : "http://localhost:51600";
+    }
+
+    getAll(): Observable<OrgUnitResponseDTO[] | null> {
+        let url_ = this.baseUrl + "/api/OrgUnits/GetAll";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Content-Type": "application/json", 
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processGetAll(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGetAll(<any>response_);
+                } catch (e) {
+                    return <Observable<OrgUnitResponseDTO[] | null>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<OrgUnitResponseDTO[] | null>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processGetAll(response: HttpResponseBase): Observable<OrgUnitResponseDTO[] | null> {
+        const status = response.status;
+        const responseBlob = 
+            response instanceof HttpResponse ? response.body : 
+            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            if (resultData200 && resultData200.constructor === Array) {
+                result200 = [];
+                for (let item of resultData200)
+                    result200.push(OrgUnitResponseDTO.fromJS(item));
+            }
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<OrgUnitResponseDTO[] | null>(<any>null);
+    }
+
+    addOrgUnit(orgUnitDTO: OrgUnitRequestDTO | null): Observable<OrgUnitResponseDTO | null> {
+        let url_ = this.baseUrl + "/api/OrgUnits/AddOrgUnit";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(orgUnitDTO);
+
+        let options_ : any = {
+            body: content_,
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Content-Type": "application/json", 
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("post", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processAddOrgUnit(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processAddOrgUnit(<any>response_);
+                } catch (e) {
+                    return <Observable<OrgUnitResponseDTO | null>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<OrgUnitResponseDTO | null>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processAddOrgUnit(response: HttpResponseBase): Observable<OrgUnitResponseDTO | null> {
+        const status = response.status;
+        const responseBlob = 
+            response instanceof HttpResponse ? response.body : 
+            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? OrgUnitResponseDTO.fromJS(resultData200) : <any>null;
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<OrgUnitResponseDTO | null>(<any>null);
+    }
+
+    addWarehouse(orgUnitDTO: OrgUnitRequestDTO | null): Observable<OrgUnitResponseDTO | null> {
+        let url_ = this.baseUrl + "/api/OrgUnits/AddWarehouse";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(orgUnitDTO);
+
+        let options_ : any = {
+            body: content_,
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Content-Type": "application/json", 
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("post", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processAddWarehouse(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processAddWarehouse(<any>response_);
+                } catch (e) {
+                    return <Observable<OrgUnitResponseDTO | null>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<OrgUnitResponseDTO | null>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processAddWarehouse(response: HttpResponseBase): Observable<OrgUnitResponseDTO | null> {
+        const status = response.status;
+        const responseBlob = 
+            response instanceof HttpResponse ? response.body : 
+            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? OrgUnitResponseDTO.fromJS(resultData200) : <any>null;
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<OrgUnitResponseDTO | null>(<any>null);
+    }
+
+    update(orgUnitDTO: OrgUnitRequestDTO | null): Observable<OrgUnitResponseDTO | null> {
+        let url_ = this.baseUrl + "/api/OrgUnits/Update";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(orgUnitDTO);
+
+        let options_ : any = {
+            body: content_,
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Content-Type": "application/json", 
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("put", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processUpdate(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processUpdate(<any>response_);
+                } catch (e) {
+                    return <Observable<OrgUnitResponseDTO | null>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<OrgUnitResponseDTO | null>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processUpdate(response: HttpResponseBase): Observable<OrgUnitResponseDTO | null> {
+        const status = response.status;
+        const responseBlob = 
+            response instanceof HttpResponse ? response.body : 
+            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? OrgUnitResponseDTO.fromJS(resultData200) : <any>null;
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<OrgUnitResponseDTO | null>(<any>null);
+    }
+
+    delete(orgUnitId: string | undefined): Observable<void> {
+        let url_ = this.baseUrl + "/api/OrgUnits/Delete?";
+        if (orgUnitId === null)
+            throw new Error("The parameter 'orgUnitId' cannot be null.");
+        else if (orgUnitId !== undefined)
+            url_ += "orgUnitId=" + encodeURIComponent("" + orgUnitId) + "&"; 
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Content-Type": "application/json", 
+            })
+        };
+
+        return this.http.request("delete", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processDelete(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processDelete(<any>response_);
+                } catch (e) {
+                    return <Observable<void>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<void>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processDelete(response: HttpResponseBase): Observable<void> {
+        const status = response.status;
+        const responseBlob = 
+            response instanceof HttpResponse ? response.body : 
+            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return _observableOf<void>(<any>null);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<void>(<any>null);
+    }
+}
+
+@Injectable()
 export class TenantSettingsServiceProxy {
     private http: HttpClient;
     private baseUrl: string;
@@ -1761,7 +2031,6 @@ export interface IUserDTO {
 export class UserSettingsDTO implements IUserSettingsDTO {
     isTwoFactorAuthenticationEnabled: boolean;
     language: string | undefined;
-    hasUserPicture: boolean;
 
     constructor(data?: IUserSettingsDTO) {
         if (data) {
@@ -1776,7 +2045,6 @@ export class UserSettingsDTO implements IUserSettingsDTO {
         if (data) {
             this.isTwoFactorAuthenticationEnabled = data["isTwoFactorAuthenticationEnabled"];
             this.language = data["language"];
-            this.hasUserPicture = data["hasUserPicture"];
         }
     }
 
@@ -1791,7 +2059,6 @@ export class UserSettingsDTO implements IUserSettingsDTO {
         data = typeof data === 'object' ? data : {};
         data["isTwoFactorAuthenticationEnabled"] = this.isTwoFactorAuthenticationEnabled;
         data["language"] = this.language;
-        data["hasUserPicture"] = this.hasUserPicture;
         return data; 
     }
 }
@@ -1799,7 +2066,6 @@ export class UserSettingsDTO implements IUserSettingsDTO {
 export interface IUserSettingsDTO {
     isTwoFactorAuthenticationEnabled: boolean;
     language: string | undefined;
-    hasUserPicture: boolean;
 }
 
 export class SignInRequest implements ISignInRequest {
@@ -2310,6 +2576,120 @@ export interface IEmployeeDTO {
     isActive: boolean;
     isInvitationAccepted: boolean;
     fullName: string | undefined;
+}
+
+export class OrgUnitDTO implements IOrgUnitDTO {
+    id: string;
+    name: string | undefined;
+    currentOrgUnitMOLId: string;
+    isWarehouse: boolean;
+
+    constructor(data?: IOrgUnitDTO) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(data?: any) {
+        if (data) {
+            this.id = data["id"];
+            this.name = data["name"];
+            this.currentOrgUnitMOLId = data["currentOrgUnitMOLId"];
+            this.isWarehouse = data["isWarehouse"];
+        }
+    }
+
+    static fromJS(data: any): OrgUnitDTO {
+        data = typeof data === 'object' ? data : {};
+        let result = new OrgUnitDTO();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["id"] = this.id;
+        data["name"] = this.name;
+        data["currentOrgUnitMOLId"] = this.currentOrgUnitMOLId;
+        data["isWarehouse"] = this.isWarehouse;
+        return data; 
+    }
+}
+
+export interface IOrgUnitDTO {
+    id: string;
+    name: string | undefined;
+    currentOrgUnitMOLId: string;
+    isWarehouse: boolean;
+}
+
+export class OrgUnitResponseDTO extends OrgUnitDTO implements IOrgUnitResponseDTO {
+    currentOrgUnitMOLName: string | undefined;
+
+    constructor(data?: IOrgUnitResponseDTO) {
+        super(data);
+    }
+
+    init(data?: any) {
+        super.init(data);
+        if (data) {
+            this.currentOrgUnitMOLName = data["currentOrgUnitMOLName"];
+        }
+    }
+
+    static fromJS(data: any): OrgUnitResponseDTO {
+        data = typeof data === 'object' ? data : {};
+        let result = new OrgUnitResponseDTO();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["currentOrgUnitMOLName"] = this.currentOrgUnitMOLName;
+        super.toJSON(data);
+        return data; 
+    }
+}
+
+export interface IOrgUnitResponseDTO extends IOrgUnitDTO {
+    currentOrgUnitMOLName: string | undefined;
+}
+
+export class OrgUnitRequestDTO extends OrgUnitDTO implements IOrgUnitRequestDTO {
+    molStartDate: number;
+
+    constructor(data?: IOrgUnitRequestDTO) {
+        super(data);
+    }
+
+    init(data?: any) {
+        super.init(data);
+        if (data) {
+            this.molStartDate = data["molStartDate"];
+        }
+    }
+
+    static fromJS(data: any): OrgUnitRequestDTO {
+        data = typeof data === 'object' ? data : {};
+        let result = new OrgUnitRequestDTO();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["molStartDate"] = this.molStartDate;
+        super.toJSON(data);
+        return data; 
+    }
+}
+
+export interface IOrgUnitRequestDTO extends IOrgUnitDTO {
+    molStartDate: number;
 }
 
 export class TenantSettingsDTO implements ITenantSettingsDTO {

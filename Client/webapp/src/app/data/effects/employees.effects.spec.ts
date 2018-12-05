@@ -53,25 +53,25 @@ describe("EmployeesEffects", () => {
       expect(effects.employeesLoad$).toBeObservable(expected);
     });
 
-    it("should call getListOfSubordinates and return a EmployeesLoadSuccess on success", () => {
-      spyOn(fromAuth, "isAdmin").and.returnValue(false);
-
-      const effects = get<EmployeesEffects>();
-      const employees = [new EmployeeDTO()];
-
-      const action = new EmployeesLoad();
-      const completion = new EmployeesLoadSuccess({employees});
-
-      actions$.stream = hot("-a", {a: action});
-      const response = cold("-b", {b: employees});
-      const expected = cold("--c", {c: completion});
-
-      resolve<EmployeesServiceProxy>(EmployeesServiceProxy)
-        .setup(instance => instance.getListOfSubordinates())
-        .returns(response);
-
-      expect(effects.employeesLoad$).toBeObservable(expected);
-    });
+    // it("should call getListOfSubordinates and return a EmployeesLoadSuccess on success", () => {
+    //   spyOn(fromAuth, "isAdmin").and.returnValue(false);
+    //
+    //   const effects = get<EmployeesEffects>();
+    //   const employees = [new EmployeeDTO()];
+    //
+    //   const action = new EmployeesLoad();
+    //   const completion = new EmployeesLoadSuccess({employees});
+    //
+    //   actions$.stream = hot("-a", {a: action});
+    //   const response = cold("-b", {b: employees});
+    //   const expected = cold("--c", {c: completion});
+    //
+    //   resolve<EmployeesServiceProxy>(EmployeesServiceProxy)
+    //     .setup(instance => instance.getListOfSubordinates())
+    //     .returns(response);
+    //
+    //   expect(effects.employeesLoad$).toBeObservable(expected);
+    // });
 
     it("should return a EmployeesLoadFailure on server error", () => {
       spyOn(fromAuth, "isAdmin").and.returnValue(true);
@@ -92,24 +92,24 @@ describe("EmployeesEffects", () => {
       expect(effects.employeesLoad$).toBeObservable(expected);
     });
 
-    it("should return a EmployeesLoadFailure on server error", () => {
-      spyOn(fromAuth, "isAdmin").and.returnValue(false);
-      const effects = get<EmployeesEffects>();
-
-      const action = new EmployeesLoad();
-      const error = "Error!";
-      const completion = new EmployeesLoadFailure(error);
-
-      actions$.stream = hot("-a", {a: action});
-      const response = cold("-#", {}, error);
-      const expected = cold("--c", {c: completion});
-
-      resolve<EmployeesServiceProxy>(EmployeesServiceProxy)
-        .setup(instance => instance.getListOfSubordinates())
-        .returns(response);
-
-      expect(effects.employeesLoad$).toBeObservable(expected);
-    });
+  //   it("should return a EmployeesLoadFailure on server error", () => {
+  //     spyOn(fromAuth, "isAdmin").and.returnValue(false);
+  //     const effects = get<EmployeesEffects>();
+  //
+  //     const action = new EmployeesLoad();
+  //     const error = "Error!";
+  //     const completion = new EmployeesLoadFailure(error);
+  //
+  //     actions$.stream = hot("-a", {a: action});
+  //     const response = cold("-#", {}, error);
+  //     const expected = cold("--c", {c: completion});
+  //
+  //     resolve<EmployeesServiceProxy>(EmployeesServiceProxy)
+  //       .setup(instance => instance.getListOfSubordinates())
+  //       .returns(response);
+  //
+  //     expect(effects.employeesLoad$).toBeObservable(expected);
+  //   });
   });
 
   describe("editEmployee$", () => {

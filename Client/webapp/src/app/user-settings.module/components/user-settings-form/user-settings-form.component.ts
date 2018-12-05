@@ -34,7 +34,8 @@ export class UserSettingsFormComponent extends BasicFormComponent {
   }
 
   get hasUserPicture(): boolean {
-    return this.userSettings.hasUserPicture;
+    return false;
+    // return this.userSettings.hasUserPicture;
   }
 
   public form: FormGroup;

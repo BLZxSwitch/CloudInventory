@@ -19,11 +19,11 @@ describe("User Settings Reducer", () => {
       const user = new UserDTO();
       const isTwoFactorAuthenticationEnabled = true;
       const language = "language";
-      const hasUserPicture = true;
+      // const hasUserPicture = true;
       user.userSettings = new UserSettingsDTO({
         isTwoFactorAuthenticationEnabled,
         language,
-        hasUserPicture,
+        // hasUserPicture,
       });
 
       const action = new LoginSuccess({user});
@@ -33,7 +33,7 @@ describe("User Settings Reducer", () => {
       expect(result).toEqual({
         isTwoFactorAuthenticationEnabled,
         language,
-        hasUserPicture
+        // hasUserPicture
       });
     });
   });
@@ -43,11 +43,11 @@ describe("User Settings Reducer", () => {
       const user = new UserDTO();
       const isTwoFactorAuthenticationEnabled = true;
       const language = "language";
-      const hasUserPicture = true;
+      // const hasUserPicture = true;
       user.userSettings = new UserSettingsDTO({
         isTwoFactorAuthenticationEnabled,
         language,
-        hasUserPicture,
+        // hasUserPicture,
       });
 
       const action = new MeRequestSuccess({user});
@@ -57,7 +57,7 @@ describe("User Settings Reducer", () => {
       expect(result).toEqual({
         isTwoFactorAuthenticationEnabled,
         language,
-        hasUserPicture,
+        // hasUserPicture,
       });
     });
   });
@@ -66,11 +66,11 @@ describe("User Settings Reducer", () => {
     it("should set isTwoFactorAuthenticationEnabled and language", () => {
       const isTwoFactorAuthenticationEnabled = true;
       const language = "language";
-      const hasUserPicture = true;
+      // const hasUserPicture = true;
       const userSettings = new UserSettingsDTO({
         isTwoFactorAuthenticationEnabled,
         language,
-        hasUserPicture,
+        // hasUserPicture,
       });
 
       const action = new UserSettingsUpdateSuccess({userSettings});
@@ -80,7 +80,7 @@ describe("User Settings Reducer", () => {
       expect(result).toEqual({
         isTwoFactorAuthenticationEnabled,
         language,
-        hasUserPicture,
+        // hasUserPicture,
       });
     });
   });
@@ -89,11 +89,11 @@ describe("User Settings Reducer", () => {
     it("should set user settings", () => {
       const isTwoFactorAuthenticationEnabled = true;
       const language = "language";
-      const hasUserPicture = true;
+      // const hasUserPicture = true;
       const userSettings = new UserSettingsDTO({
         isTwoFactorAuthenticationEnabled,
         language,
-        hasUserPicture,
+        // hasUserPicture,
       });
 
       const action = new UserSettingsRequestSuccess({userSettings});
@@ -103,7 +103,7 @@ describe("User Settings Reducer", () => {
       expect(result).toEqual({
         isTwoFactorAuthenticationEnabled,
         language,
-        hasUserPicture,
+        // hasUserPicture,
       });
     });
   });

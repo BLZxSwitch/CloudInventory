@@ -1,0 +1,6 @@
+<pr-org-units-list-item
+  *ngFor="let item of items$ | async; trackBy: trackByFn"
+  [item]="item"
+  (edit)="onEdit(item)"
+  (delete)="onDelete(item.id)">
+</pr-org-units-list-item>

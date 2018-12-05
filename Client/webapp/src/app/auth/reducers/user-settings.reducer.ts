@@ -4,13 +4,13 @@ import { UserSettingsActionsUnion, UserSettingsActionTypes } from "../actions/us
 export interface IState {
   language: string;
   isTwoFactorAuthenticationEnabled: boolean;
-  hasUserPicture: boolean;
+  // hasUserPicture: boolean;
 }
 
 export const initialState: IState = {
   language: undefined,
   isTwoFactorAuthenticationEnabled: undefined,
-  hasUserPicture: undefined,
+  // hasUserPicture: undefined,
 };
 
 export function reducer(state = initialState, action: AuthActionsUnion | UserSettingsActionsUnion): IState {
@@ -20,13 +20,13 @@ export function reducer(state = initialState, action: AuthActionsUnion | UserSet
       const {
         isTwoFactorAuthenticationEnabled,
         language,
-        hasUserPicture,
+        // hasUserPicture,
       } = action.payload.user.userSettings;
       return {
         ...state,
         isTwoFactorAuthenticationEnabled,
         language,
-        hasUserPicture,
+        // hasUserPicture,
       };
     }
 
@@ -35,13 +35,13 @@ export function reducer(state = initialState, action: AuthActionsUnion | UserSet
       const {
         isTwoFactorAuthenticationEnabled,
         language,
-        hasUserPicture,
+        // hasUserPicture,
       } = action.payload.userSettings;
       return {
         ...state,
         isTwoFactorAuthenticationEnabled,
         language,
-        hasUserPicture,
+        // hasUserPicture,
       };
     }
 

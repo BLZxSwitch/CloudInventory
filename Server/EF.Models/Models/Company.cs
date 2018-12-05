@@ -16,5 +16,6 @@ namespace EF.Models.Models
 
         public virtual Tenant Tenant { get; set; }
         public virtual List<Employee> Employees { get; set; } = new List<Employee>();
+        public virtual List<OrgUnit> OrgUnits { get; set; } = new List<OrgUnit>();
     }
 }

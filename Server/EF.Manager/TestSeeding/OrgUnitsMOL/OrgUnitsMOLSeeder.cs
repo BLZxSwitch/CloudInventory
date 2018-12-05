@@ -30,9 +30,9 @@ namespace EF.Manager.TestSeeding.OrgUnitsMOL
                 var orgUnitsMOL = _userJsonDataReader.Read("OrgUnitsMOL/OrgUnitsMOL.json");
                 foreach (var orgUnitMOL in orgUnitsMOL)
                 {
-                    if (await context.OrgUnit.AnyAsync(ou => ou.Id == orgUnitMOL.Id) == false)
+                    if (await context.OrgUnitMOLs.AnyAsync(ou => ou.Id == orgUnitMOL.Id) == false)
                     {
-                        context.OrgUnitMOL.Add(orgUnitMOL);
+                        context.OrgUnitMOLs.Add(orgUnitMOL);
                     }
                 }
 

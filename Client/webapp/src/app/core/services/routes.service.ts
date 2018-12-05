@@ -9,6 +9,7 @@ export const COMPANY_SETTINGS = "company-settings";
 export const DASHBOARD = "dashboard";
 export const NEW = "new";
 export const TERMS_OF_SERVICE = "terms-of-service";
+export const ORG_UNITS = "org-units";
 
 @Injectable()
 export class RoutesService {
@@ -45,4 +46,10 @@ export class RoutesService {
 
   @Memoize()
   public authOtpEnterCode = () => ["/", AUTH, OTP_ENTER_CODE];
+
+  @Memoize()
+  public orgUnits = () => ["/", ORG_UNITS];
+
+  @Memoize()
+  public orgUnitsNew = () => ["/", ORG_UNITS, NEW];
 }

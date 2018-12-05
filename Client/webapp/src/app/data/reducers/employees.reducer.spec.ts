@@ -1,4 +1,4 @@
-import { EmployeeDTO, OrganizationalUnitResponseDTO } from "../../core/services/service-proxies";
+import { EmployeeDTO } from "../../core/services/service-proxies";
 import {
   EmployeeAddAndSendInvitationSuccess,
   EmployeeAddSuccess,
@@ -7,11 +7,6 @@ import {
   EmployeeSendInvitationSuccess,
   EmployeesLoadSuccess
 } from "../actions/employees.actions";
-import {
-  OrganizationalUnitAddSuccess, OrganizationalUnitDeleteSuccess,
-  OrganizationalUnitEditSuccess,
-  OrganizationalUnitsLoadSuccess
-} from "../actions/organizational-units-collection.actions";
 import { initialState, reducer } from "./employees.reducer";
 
 describe("Employees Reducer", () => {
@@ -154,137 +149,6 @@ describe("Employees Reducer", () => {
           1: employee,
         },
         ids: [1]
-      }));
-    });
-  });
-
-  describe("OrganizationalUnitsCollectionActionTypes.OrganizationalUnitAddSuccess action", () => {
-    it("should update organizationalUnitId of employee", () => {
-      const organizationalUnit = new OrganizationalUnitResponseDTO();
-      organizationalUnit.employeeIds = [1, 2] as any;
-      organizationalUnit.id = "organizationalUnitId";
-      const action = new OrganizationalUnitAddSuccess({organizationalUnit});
-
-      const result = reducer({
-        entities: {
-          1: new EmployeeDTO({
-            id: 1,
-          } as any)
-        },
-        ids: [1]
-      }, action);
-
-      expect(JSON.stringify(result)).toEqual(JSON.stringify({
-        entities: {
-          1: new EmployeeDTO({
-            id: 1,
-            organizationalUnitId: "organizationalUnitId",
-          } as any),
-          2: new EmployeeDTO({
-            id: 2,
-            organizationalUnitId: "organizationalUnitId",
-          } as any),
-        },
-        ids: [1, 2]
-      }));
-    });
-  });
-
-  describe("OrganizationalUnitsCollectionActionTypes.OrganizationalUnitEditSuccess action", () => {
-    it("should update organizationalUnitId of employee", () => {
-      const organizationalUnit = new OrganizationalUnitResponseDTO();
-      organizationalUnit.employeeIds = [1, 2] as any;
-      organizationalUnit.id = "organizationalUnitId";
-      const action = new OrganizationalUnitEditSuccess({organizationalUnit});
-
-      const result = reducer({
-        entities: {
-          1: new EmployeeDTO({
-            id: 1,
-          } as any)
-        },
-        ids: [1]
-      }, action);
-
-      expect(JSON.stringify(result)).toEqual(JSON.stringify({
-        entities: {
-          1: new EmployeeDTO({
-            id: 1,
-            organizationalUnitId: "organizationalUnitId",
-          } as any),
-          2: new EmployeeDTO({
-            id: 2,
-            organizationalUnitId: "organizationalUnitId",
-          } as any),
-        },
-        ids: [1, 2]
-      }));
-    });
-  });
-
-  describe("OrganizationalUnitsCollectionActionTypes.OrganizationalUnitsLoadSuccess action", () => {
-    it("should update organizationalUnitId of employee", () => {
-      const organizationalUnit = new OrganizationalUnitResponseDTO();
-      organizationalUnit.employeeIds = [1, 2] as any;
-      organizationalUnit.id = "organizationalUnitId";
-      const action = new OrganizationalUnitsLoadSuccess({organizationalUnits: [organizationalUnit]});
-
-      const result = reducer({
-        entities: {
-          1: new EmployeeDTO({
-            id: 1,
-          } as any)
-        },
-        ids: [1]
-      }, action);
-
-      expect(JSON.stringify(result)).toEqual(JSON.stringify({
-        entities: {
-          1: new EmployeeDTO({
-            id: 1,
-            organizationalUnitId: "organizationalUnitId",
-          } as any),
-          2: new EmployeeDTO({
-            id: 2,
-            organizationalUnitId: "organizationalUnitId",
-          } as any),
-        },
-        ids: [1, 2]
-      }));
-    });
-  });
-
-  describe("OrganizationalUnitsCollectionActionTypes.OrganizationalUnitDeleteSuccess action", () => {
-    it("should update organizationalUnitId of employee", () => {
-      const organizationalUnitId = "organizationalUnitId1";
-      const action = new OrganizationalUnitDeleteSuccess({organizationalUnitId});
-
-      const result = reducer({
-        entities: {
-          1: new EmployeeDTO({
-            id: 1,
-            organizationalUnitId: "organizationalUnitId1",
-          } as any),
-          2: new EmployeeDTO({
-            id: 2,
-            organizationalUnitId: "organizationalUnitId2",
-          } as any),
-        },
-        ids: [1, 2]
-      }, action);
-
-      expect(JSON.stringify(result)).toEqual(JSON.stringify({
-        entities: {
-          1: new EmployeeDTO({
-            id: 1,
-            organizationalUnitId: undefined,
-          } as any),
-          2: new EmployeeDTO({
-            id: 2,
-            organizationalUnitId: "organizationalUnitId2",
-          } as any),
-        },
-        ids: [1, 2]
       }));
     });
   });

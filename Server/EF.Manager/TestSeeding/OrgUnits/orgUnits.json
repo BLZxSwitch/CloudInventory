@@ -3,12 +3,16 @@
     "Id": "{18596c3e-2f24-4e95-8635-b273be67905c}",
     "Name": "Основоной склад",
     "IsWarehouse": true,
-    "CurrentOrgUnitMOLId": "{acc6c11d-6e70-4508-b9e1-93f93da8e601}"
+    "CurrentOrgUnitMOLId": "{acc6c11d-6e70-4508-b9e1-93f93da8e601}",
+    "CompanyId": "{5d73e9b6-5703-4a48-a1e5-ff66904f2215}",
+    "TenantId": "{21acd8e0-5343-492f-b9f3-43a35a89f654}"
   },
   {
     "Id": "{57436d0a-b9f6-4d1c-ad13-363ddd5a90c5}",
     "Name": "Первый отдел",
     "IsWarehouse": false,
-    "CurrentOrgUnitMOLId": "{acc6c11d-6e70-4508-b9e1-93f93da8e601}"
+    "CurrentOrgUnitMOLId": "{acc6c11d-6e70-4508-b9e1-93f93da8e601}",
+    "CompanyId": "{5d73e9b6-5703-4a48-a1e5-ff66904f2215}",
+    "TenantId": "{21acd8e0-5343-492f-b9f3-43a35a89f654}"
   }
 ]

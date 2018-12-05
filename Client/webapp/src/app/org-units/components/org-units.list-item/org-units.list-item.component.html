@@ -1,0 +1,23 @@
+<mat-card class="mat-typography">
+  <mat-card-content>
+    <pr-static-field [label]="'ORG_UNITS.LIST_ITEM.NAME' | translate"
+                     [value]="item.name"
+                     class="name"></pr-static-field>
+
+    <pr-static-field [label]="'ORG_UNITS.LIST_ITEM.MOL' | translate"
+                     [value]="item.currentOrgUnitMOLName"
+                     class="deputy-head-employee-name"></pr-static-field>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <pr-button icon="edit"
+               (click)="edit.emit()">
+      {{'COMMON.BUTTONS.EDIT' | translate}}
+    </pr-button>
+
+    <pr-button icon="delete"
+               (click)="delete.emit()">
+      {{'COMMON.BUTTONS.DELETE' | translate}}
+    </pr-button>
+  </mat-card-actions>
+</mat-card>

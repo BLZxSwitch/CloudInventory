@@ -1,0 +1,12 @@
+<pr-sidenav-layout-container>
+  <pr-card>
+    <mat-card-title>
+      {{ "ORG_UNITS.TITLE" | translate }}
+    </mat-card-title>
+    <pr-org-units-filter></pr-org-units-filter>
+    <pr-org-units-list></pr-org-units-list>
+    <mat-card-content>
+    </mat-card-content>
+  </pr-card>
+  <pr-entity-add-button (entityAdd)="onEntityAdd()"></pr-entity-add-button>
+</pr-sidenav-layout-container>

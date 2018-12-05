@@ -14,8 +14,8 @@ namespace EF.Models
         private readonly IEntityTypeConfiguration<Employee> _employeeMap;
         private readonly IEntityTypeConfiguration<SecurityUser> _securityUserMap;
         private readonly IEntityTypeConfiguration<TenantSettings> _tenantSettings;
-        private readonly IEntityTypeConfiguration<OrgUnit> _orgUnit;
-        private readonly IEntityTypeConfiguration<OrgUnitMOL> _orgUnitMOL;
+        private readonly IEntityTypeConfiguration<OrgUnit> _orgUnitMap;
+        private readonly IEntityTypeConfiguration<OrgUnitMOL> _orgUnitMolMap;
         private readonly IEntityTypeConfiguration<Tenant> _tenantMap;
         private readonly IEntityTypeConfiguration<User> _userMap;
         private readonly IEntityTypeConfiguration<UserRole> _userRoleMap;
@@ -29,8 +29,8 @@ namespace EF.Models
             IEntityTypeConfiguration<Employee> employeeMap,
             IEntityTypeConfiguration<SecurityUser> securityUserMap,
             IEntityTypeConfiguration<TenantSettings> tenantSettings,
-            IEntityTypeConfiguration<OrgUnit> orgUnit,
-            IEntityTypeConfiguration<OrgUnitMOL> orgUnitMOL
+            IEntityTypeConfiguration<OrgUnit> orgUnitMap,
+            IEntityTypeConfiguration<OrgUnitMOL> orgUnitMOLMap
             ) : base(options)
         {
             _userMap = userMap;
@@ -40,8 +40,8 @@ namespace EF.Models
             _employeeMap = employeeMap;
             _securityUserMap = securityUserMap;
             _tenantSettings = tenantSettings;
-            _orgUnit = orgUnit;
-            _orgUnitMOL = orgUnitMOL;
+            _orgUnitMap = orgUnitMap;
+            _orgUnitMolMap = orgUnitMOLMap;
         }
 
         public virtual DbSet<Tenant> Tenants { get; set; }
@@ -49,8 +49,8 @@ namespace EF.Models
         public virtual DbSet<SecurityUser> SecurityUsers { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<TenantSettings> TenantSettings { get; set; }
-        public virtual DbSet<OrgUnit> OrgUnit { get; set; }
-        public virtual DbSet<OrgUnitMOL> OrgUnitMOL { get; set; }
+        public virtual DbSet<OrgUnit> OrgUnits { get; set; }
+        public virtual DbSet<OrgUnitMOL> OrgUnitMOLs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -62,8 +62,8 @@ namespace EF.Models
             builder.ApplyConfiguration(_employeeMap);
             builder.ApplyConfiguration(_securityUserMap);
             builder.ApplyConfiguration(_tenantSettings);
-            builder.ApplyConfiguration(_orgUnit);
-            builder.ApplyConfiguration(_orgUnitMOL);
+            builder.ApplyConfiguration(_orgUnitMap);
+            builder.ApplyConfiguration(_orgUnitMolMap);
         }
     }
 }

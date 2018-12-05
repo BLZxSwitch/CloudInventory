@@ -35,7 +35,8 @@ export class NavMenuContainerComponent {
         ] : []),
         ...(isAdmin ? [{
             headerTranslationKey: "NAV_MENU.HEADER.MASTER_DATA",
-            items: [new NavItem(this.routesService.staff(), "NAV_MENU.LINK.STAFF", "group")]
+            items: [new NavItem(this.routesService.orgUnits(), "NAV_MENU.LINK.ORG_UNITS", "group"),
+              new NavItem(this.routesService.staff(), "NAV_MENU.LINK.STAFF", "group")]
           },
           ]
           : []),

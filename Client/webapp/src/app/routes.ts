@@ -5,7 +5,7 @@ import {
   COMPANY_REGISTER,
   COMPANY_SETTINGS,
   DASHBOARD,
-  MY_SETTINGS,
+  MY_SETTINGS, ORG_UNITS,
   STAFF, TERMS_OF_SERVICE
 } from "./core/services/routes.service";
 import { TermsOfServiceComponent } from "./shared.module/components/terms-of-service/terms-of-service.component";
@@ -42,6 +42,11 @@ export const ROUTES: Routes = [
   {
     path: DASHBOARD,
     loadChildren: "./dashboard/dashboard.module#DashboardModule",
+    canActivate: [AuthGuard]
+  },
+  {
+    path: ORG_UNITS,
+    loadChildren: "./org-units/org-units.module#OrgUnitsModule",
     canActivate: [AuthGuard]
   },
   {path: "**", component: NotFoundPageComponent}

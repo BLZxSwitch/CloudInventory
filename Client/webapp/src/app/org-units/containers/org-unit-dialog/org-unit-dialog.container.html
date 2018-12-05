@@ -1,0 +1,5 @@
+<pr-org-unit-edit [type]="type$ | async"
+                       [orgUnit]="orgUnit$ | async"
+                       (submitForm)="onSubmit($event)"
+                       (cancel)="onCancel()">
+</pr-org-unit-edit>

@@ -17,6 +17,13 @@ namespace EF.Models.Mappings
                 .HasForeignKey(entity => entity.CurrentOrgUnitMOLId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .IsRequired();
+            builder.HasOne(entity => entity.Company)
+                .WithMany(company => company.OrgUnits)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasForeignKey(entity => entity.CompanyId);
+            builder.HasOne(entity => entity.Tenant)
+                .WithMany()
+                .HasForeignKey(entity => entity.TenantId);
             builder.ToTable("OrgUnit", "md");
         }
     }

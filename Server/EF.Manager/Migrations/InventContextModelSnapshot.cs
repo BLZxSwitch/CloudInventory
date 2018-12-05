@@ -99,15 +99,23 @@ namespace EF.Manager.Migrations
                         .ValueGeneratedOnAdd()
                         .HasDefaultValueSql("newsequentialid()");
 
+                    b.Property<Guid>("CompanyId");
+
                     b.Property<Guid>("CurrentOrgUnitMOLId");
 
                     b.Property<bool>("IsWarehouse");
 
                     b.Property<string>("Name");
 
+                    b.Property<Guid>("TenantId");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("CompanyId");
+
                     b.HasIndex("CurrentOrgUnitMOLId");
+
+                    b.HasIndex("TenantId");
 
                     b.ToTable("OrgUnit","md");
                 });
@@ -396,10 +404,20 @@ namespace EF.Manager.Migrations
 
             modelBuilder.Entity("EF.Models.Models.OrgUnit", b =>
                 {
+                    b.HasOne("EF.Models.Models.Company", "Company")
+                        .WithMany("OrgUnits")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("EF.Models.Models.Employee", "CurrentOrgUnitMOL")
                         .WithMany("OrgUnits")
                         .HasForeignKey("CurrentOrgUnitMOLId")
                         .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("EF.Models.Models.Tenant", "Tenant")
+                        .WithMany()
+                        .HasForeignKey("TenantId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("EF.Models.Models.OrgUnitMOL", b =>

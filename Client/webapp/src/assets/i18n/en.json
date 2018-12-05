@@ -145,6 +145,23 @@
     "DECLINE": "Decline",
     "FULL_PAGE_LINK": "Open terms of service in a new page"
   },
+  "ORG_UNITS": {
+    "TITLE": "Org units",
+    "LIST_ITEM": {
+      "NAME": "TODO_Подразделение",
+      "MOL": "TODO_МОЛ"
+    },
+    "FORM": {
+      "CONFIRM_DELETE": "TODO_Вы уверены, что хотите удалить структурное подразделение?",
+      "SAVED_SUCCESSFULLY": "TODO_Структурное подразделение успешно изменено.",
+      "ADDED_SUCCESSFULLY": "TODO_Структурное подразделение успешно добавлено.",
+      "DELETE_SUCCESSFULLY": "TODO_Структурное подразделение успешно удалено.",
+      "ADD_ERROR": "TODO_Ошибка добавления структурного подразделения."
+    },
+    "FILTER": {
+      "TITLE": "Filter"
+    }
+  },
   "COMPANY_REGISTER": {
     "TITLE": "Register the company",
     "SUBMIT_FORM": "Register",
@@ -244,7 +261,8 @@
       "DASHBOARD": "Dashboard",
       "STAFF": "Staff",
       "MY_SETTINGS": "User settings",
-      "COMPANY_SETTINGS": "Company settings"
+      "COMPANY_SETTINGS": "Company settings",
+      "ORG_UNITS": "TODO_Структурные подразделения"
     }
   },
   "MY_SETTINGS": {
